@@ -14,7 +14,7 @@
     let originalOverlay;
 
     function preload() {
-        overlay = loadImage('/lady-thread/overlay.gif'); // Make sure the image is in the same directory
+        overlay = loadImage('overlay.gif'); // Make sure the image is in the same directory
     }
 
     function setup() {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Lady Thread | The Aetherway</title>
+<title>Lady Thread Generator | The Aetherway</title>
 
       <link rel="stylesheet" href="https://millennium-whoop.github.io/aetherway/css/main.min.91b6f1442bd3e645f0039087c32567295b581a33bbc0b9c63dc08cd2e4e77c33.css" integrity="sha256-kbbxRCvT5kXwA5CHwyVnKVtYGjO7wLnGPcCM0uTnfDM=" crossorigin="anonymous">
 
@@ -20,26 +20,44 @@
     
     <ul id="breadcrumbs">
         <li><a href="https://millennium-whoop.github.io/aetherway/">Home</a></li>
-        <li><a href="https://millennium-whoop.github.io/aetherway/epic/">The Epic of the Hive People</a></li>
-        <li><a href="https://millennium-whoop.github.io/aetherway/epic/characters/">Characters</a></li>
 </ul>
 
   </header>
   <main>
     
-  <h1>Lady Thread</h1>
-
-  
-  
   
 
-  <p>She&rsquo;s so good with hair that people often call on her to find their thread of thought. If you&rsquo;ve lost yours, here&rsquo;s a little prayer to help you find it:</p>
-<blockquote>
-<p>Lady Thread, goddess of memory and recollection. I lost my thoughts in my head&rsquo;s tangled mess. Please help me find those loose ends.</p></blockquote>
-<blockquote>
-<p>PS: Your hair is the prettiest of all Ladies.</p></blockquote>
-<p>This last part is the most important. You see, when dealing with deities, it&rsquo;s important to suck up to them.</p>
-<p><img src="https://millennium-whoop.github.io/aetherway/images/lady-thread.webp" alt="Lady Thread"></p>
+  
+  
+  
+
+  <div id="sketch-container">
+<button id="screenshotButton">Save!</button>
+<script src="https://millennium-whoop.github.io/aetherway/lady-thread/p5.min.js"></script>
+<script src="https://millennium-whoop.github.io/aetherway/lady-thread/ladythread.js"></script>
+<script>
+    let screenshotCounter = 0;
+
+    function saveScreenshot() {
+        screenshotCounter++;
+        let timestamp = new Date().toISOString().replace(/[-:.T]/g, ''); // Format timestamp
+        let filename = 'LadyThread_' + screenshotCounter + '_' + timestamp + '.png';
+        saveCanvas(canvas, filename, 'png');
+    }
+
+    // Bind the screenshot button click event
+    document.getElementById('screenshotButton').addEventListener('click', function() {
+        saveScreenshot();
+    });
+</script>
+</div>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Click/Tap the image or refresh the page to shuffle colors.</li>
+<li>Save your favorites!</li>
+<li>Free wallpaper?</li>
+<li>Share it under #aetherway</li>
+</ol>
 
   
 
@@ -54,7 +72,7 @@
 
 
 
-<p><i>Sparkle-sprinkle site? Circuits go full-on vibe-burst mode? Tell friends! More zoomy-zappy bouncy-boom, whoop whoop!</i></p>
+<p><i>Zoom-zoom thoughts? Fizzle-dazzle questions? <a href="https://millennium-whoop.github.io/aetherway/connect/">Sync up!</a></i></p>
 
     <nav>
       <ul>
