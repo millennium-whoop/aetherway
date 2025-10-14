@@ -186,21 +186,33 @@ The worship of Lady Entanglement is typically done on a ceremony where people sh
 &lt;p&gt;Lady Thread, goddess of memory and recollection. I lost my thoughts in my head’s tangled mess. Please help me find those loose ends.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;PS: Your hair is the prettiest of all Ladies.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;This last part is the most important. You see, when dealing with deities, it’s important to suck up to them.&lt;/p&gt;</description></item><item><title>Lady Thread Generator</title><link>https://millennium-whoop.github.io/aetherway/lady-thread/</link><pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate><guid>https://millennium-whoop.github.io/aetherway/lady-thread/</guid><description>&lt;p&gt;Save!&lt;/p&gt;
+&lt;p&gt;This last part is the most important. You see, when dealing with deities, it’s important to suck up to them.&lt;/p&gt;</description></item><item><title>Lady Thread Generator</title><link>https://millennium-whoop.github.io/aetherway/lady-thread/</link><pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate><guid>https://millennium-whoop.github.io/aetherway/lady-thread/</guid><description>&lt;div id="sketch-container"&gt;
+ &lt;button id="screenshotButton"&gt;Save!&lt;/button&gt;
+&lt;/div&gt;
+&lt;!-- Load p5.js and your sketch --&gt;
+&lt;script src="https://millennium-whoop.github.io/aetherway/lady-thread/p5.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://millennium-whoop.github.io/aetherway/lady-thread/ladythread.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+ let screenshotCounter = 0;
+
+ // Function to save a screenshot with counter and timestamp
+ function saveScreenshot() {
+ screenshotCounter++;
+ const timestamp = new Date().toISOString().replace(/[-:.T]/g, '');
+ const filename = `LadyThread_${screenshotCounter}_${timestamp}.png`;
+ saveCanvas(canvas, filename, 'png');
+ }
+
+ // Attach click event to screenshot button
+ const button = document.getElementById('screenshotButton');
+ button.addEventListener('click', saveScreenshot);
+&lt;/script&gt;
 &lt;h2 id="instructions"&gt;Instructions&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Click/Tap the image or refresh the page to shuffle colors.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Save your favorites!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Free wallpaper?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Share it under #aetherway&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Click/Tap the image or refresh the page to shuffle colors.&lt;/li&gt;
+&lt;li&gt;Save your favorites!&lt;/li&gt;
+&lt;li&gt;Free wallpaper?&lt;/li&gt;
+&lt;li&gt;Share it under #aetherway&lt;/li&gt;
 &lt;/ol&gt;</description></item><item><title>Lady Zero</title><link>https://millennium-whoop.github.io/aetherway/epic/characters/lady-zero/</link><pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate><guid>https://millennium-whoop.github.io/aetherway/epic/characters/lady-zero/</guid><description>&lt;p&gt;Lady Zero was drawn to a mysterious cave, but each time she approached, she was met with mocking laughter from within. Despite her curiosity, fear held her back. One day, summoning her courage, Lady Zero laughed defiantly at the cave and ventured inside. After exploring its wonders, she returned and noticed a small, child-sized footprint facing the opposite direction—her own, but smaller. To her surprise, instead of laughter, she heard applause coming from the cave.&lt;/p&gt;</description></item><item><title>Looking for Neighbors!</title><link>https://millennium-whoop.github.io/aetherway/blog/post-6/</link><pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate><guid>https://millennium-whoop.github.io/aetherway/blog/post-6/</guid><description>&lt;p&gt;March 3, 2025&lt;/p&gt;
 &lt;p&gt;Hello wonderful carbon-based organisms!&lt;/p&gt;
 &lt;p&gt;I’m looking for some cool NeoCities neighbors (aka affiliates/mutuals) to be featured on &lt;a href="buttons/"&gt;my collection of buttons!&lt;/a&gt;&lt;/p&gt;
