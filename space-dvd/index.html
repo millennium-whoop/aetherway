@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Space DVD</title>
+<style>
+  body { margin: 0; background: black; overflow: hidden; }
+  canvas { display: block; image-rendering: pixelated; }
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+let width, height;
+
+// Handle resizing and high-DPI
+function resizeCanvas() {
+  const dpr = window.devicePixelRatio || 1;
+  width = window.innerWidth;
+  height = window.innerHeight;
+
+  canvas.width = Math.round(width * dpr);
+  canvas.height = Math.round(height * dpr);
+
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(dpr, dpr);
+  ctx.imageSmoothingEnabled = false; // <- Add this
+}
+
+// Initial resize and on window resize
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Flash effect for marked sprites
+let flashActive = false;
+setInterval(() => {
+  flashActive = true;
+  setTimeout(() => { flashActive = false; }, 300);
+}, 3000);
+
+// Parameters
+const spriteSize = 26;
+const numberOfStars = 100;
+const frameCount = 2;
+let currentFrame = 0;
+
+// Switch animation frame every 400ms
+setInterval(() => {
+  currentFrame = (currentFrame + 1) % frameCount;
+}, 400);
+
+// Star images
+const starImages = ['sprites/star1.png', 'sprites/star2.png', 'sprites/star3.png'].map(src => {
+  const img = new Image();
+  img.src = src;
+  return img;
+});
+
+// Starfield
+const stars = [];
+for (let i = 0; i < numberOfStars; i++) {
+  stars.push({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    img: starImages[Math.floor(Math.random() * starImages.length)],
+    opacity: Math.random() * 0.5 + 0.5
+  });
+}
+
+// Sprite sources
+const spriteSources = [
+  { src: 'sprites/001.png', link: 'https://ko-fi.com/corbari_j/shop', marked: false },
+  { src: 'sprites/002.png', link: 'https://www.instagram.com/j_corbari/', marked: false },
+  { src: 'sprites/003.png', link: 'https://www.instagram.com/maggiemoon.art', marked: false },
+];
+
+// Expanded 12-color palette
+const paletteHues = Array.from({length: 12}, (_, i) => i * 30);
+const palette = paletteHues.map(hue => hslToRgb(hue / 360, 1, 0.5));
+
+// Pick a different color index
+function getDifferentColorIndex(currentIndex) {
+  let newIndex;
+  do {
+    newIndex = Math.floor(Math.random() * palette.length);
+  } while (newIndex === currentIndex);
+  return newIndex;
+}
+
+// Sprites
+const sprites = [];
+let loadedCount = 0;
+
+spriteSources.forEach(({ src, link, marked }) => {
+  const img = new Image();
+  img.src = src;
+
+  img.onload = () => {
+    sprites.push({
+      img,
+      x: Math.random() * (width - spriteSize),
+      y: Math.random() * (height - spriteSize),
+      dx: Math.random() < 0.5 ? 1 : -1,
+      dy: Math.random() < 0.5 ? 1 : -1,
+      colorIndex: Math.floor(Math.random() * palette.length),
+      link,
+      marked: marked || false
+    });
+
+    loadedCount++;
+    if (loadedCount === spriteSources.length) {
+      animate();
+    }
+  };
+});
+
+// Draw starfield
+function drawStarfield() {
+  stars.forEach(star => {
+    ctx.globalAlpha = star.opacity;
+    ctx.drawImage(
+      star.img,
+      currentFrame * spriteSize, 0, spriteSize, spriteSize,
+      star.x, star.y, spriteSize, spriteSize
+    );
+    ctx.globalAlpha = 1;
+  });
+}
+
+// Create a single offscreen canvas once
+const off = document.createElement('canvas');
+off.width = spriteSize;
+off.height = spriteSize;
+const offCtx = off.getContext('2d');
+offCtx.imageSmoothingEnabled = false;
+
+function drawSprite(sprite) {
+  const frameX = currentFrame * spriteSize;
+
+  // Clear the offscreen canvas before drawing
+  offCtx.clearRect(0, 0, spriteSize, spriteSize);
+
+  // Draw the current frame onto the offscreen canvas
+  offCtx.drawImage(
+    sprite.img,
+    frameX, 0, spriteSize, spriteSize,
+    0, 0, spriteSize, spriteSize
+  );
+
+  // Get image data and replace colors
+  const imgData = offCtx.getImageData(0, 0, spriteSize, spriteSize);
+  const data = imgData.data;
+
+  let color = palette[sprite.colorIndex];
+  if (sprite.marked && flashActive) {
+    color = palette[Math.floor(Math.random() * palette.length)];
+  }
+
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3];
+    if (r > 200 && g > 200 && b > 200 && a > 0) {
+      data[i] = color.r;
+      data[i + 1] = color.g;
+      data[i + 2] = color.b;
+    }
+  }
+
+  offCtx.putImageData(imgData, 0, 0);
+
+  // Draw onto main canvas at integer coordinates for perfect alignment
+  ctx.drawImage(off, Math.round(sprite.x), Math.round(sprite.y));
+}
+
+// Check collisions between sprites
+function checkCollisions() {
+  for (let i = 0; i < sprites.length; i++) {
+    for (let j = i + 1; j < sprites.length; j++) {
+      const a = sprites[i];
+      const b = sprites[j];
+
+      if (Math.abs(a.x - b.x) < spriteSize && Math.abs(a.y - b.y) < spriteSize) {
+        [a.dx, b.dx] = [b.dx, a.dx];
+        [a.dy, b.dy] = [b.dy, a.dy];
+
+        a.colorIndex = getDifferentColorIndex(a.colorIndex);
+        b.colorIndex = getDifferentColorIndex(b.colorIndex);
+
+        if (a.x < b.x) { a.x -= 1; b.x += 1; } else { a.x += 1; b.x -= 1; }
+        if (a.y < b.y) { a.y -= 1; b.y += 1; } else { a.y += 1; b.y -= 1; }
+
+        a.x = Math.round(a.x); a.y = Math.round(a.y);
+        b.x = Math.round(b.x); b.y = Math.round(b.y);
+      }
+    }
+  }
+}
+
+// Animation loop
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+
+  drawStarfield();
+
+  sprites.forEach(sprite => {
+    sprite.x += sprite.dx;
+    sprite.y += sprite.dy;
+
+    let bounced = false;
+    if (sprite.x <= 0 || sprite.x >= width - spriteSize) { sprite.dx *= -1; bounced = true; }
+    if (sprite.y <= 0 || sprite.y >= height - spriteSize) { sprite.dy *= -1; bounced = true; }
+    if (bounced) { sprite.colorIndex = getDifferentColorIndex(sprite.colorIndex); }
+
+    sprite.x = Math.round(sprite.x);
+    sprite.y = Math.round(sprite.y);
+  });
+
+  checkCollisions();
+  sprites.forEach(drawSprite);
+
+  requestAnimationFrame(animate);
+}
+
+// HSL to RGB helper
+function hslToRgb(h, s, l) {
+  let r, g, b;
+  if (s === 0) { r = g = b = l; } 
+  else {
+    const hue2rgb = (p, q, t) => {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1/6) return p + (q - p) * 6 * t;
+      if (t < 1/2) return q;
+      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+      return p;
+    };
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    const p = 2 * l - q;
+    r = hue2rgb(p, q, h + 1/3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1/3);
+  }
+  return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
+}
+
+// Click opens link
+canvas.addEventListener('click', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+
+  sprites.forEach(sprite => {
+    if (mx >= sprite.x && mx <= sprite.x + spriteSize && my >= sprite.y && my <= sprite.y + spriteSize) {
+      window.open(sprite.link, '_blank');
+    }
+  });
+});
+
+// Pointer hover
+canvas.addEventListener('mousemove', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+
+  let hovering = false;
+  for (let sprite of sprites) {
+    if (mx >= sprite.x && mx <= sprite.x + spriteSize && my >= sprite.y && my <= sprite.y + spriteSize) {
+      hovering = true;
+      break;
+    }
+  }
+  canvas.style.cursor = hovering ? 'pointer' : 'default';
+});
+</script>
+
+</body>
+</html>
