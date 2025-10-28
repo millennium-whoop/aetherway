@@ -12,14 +12,12 @@
 
 <canvas id="canvas"></canvas>
 
-<audio id="bgMusic" src="music/miso_remix.opus" loop></audio>
-
 <script>
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const playlist = [
-  'music/morethanwords1.opus',
-  'music/morethanwords2.opus',
+  <!-- 'music/morethanwords1.opus', -->
+  <!-- 'music/morethanwords2.opus', -->
   <!-- 'music/happy.opus', -->
   <!-- 'music/electricity.opus', -->
   'music/drifter.opus'
@@ -442,7 +440,7 @@ canvas.addEventListener('mousemove', (e) => {
 
 // Double-click opens link
 canvas.addEventListener('dblclick', () => {
-  window.open('/abdoopts/', '_blank');
+  window.open('/aetherway/abdoopts/', '_blank');
 });
 
 
