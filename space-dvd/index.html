@@ -20,7 +20,8 @@ const playlist = [
   <!-- 'music/morethanwords2.opus', -->
   <!-- 'music/happy.opus', -->
   <!-- 'music/electricity.opus', -->
-  'music/drifter.opus'
+  'music/callmydad.opus',
+  <!-- 'music/drifter.opus' -->
 ];
 let currentTrack = Math.floor(Math.random() * playlist.length);
 
@@ -440,7 +441,7 @@ canvas.addEventListener('mousemove', (e) => {
 
 // Double-click opens link
 canvas.addEventListener('dblclick', () => {
-  window.open('/aetherway/abdoopts/', '_blank');
+  location.href = '/aetherway/abdoopts/';
 });
 
 
