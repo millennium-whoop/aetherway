@@ -16,12 +16,12 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const playlist = [
-  <!-- 'music/morethanwords1.opus', -->
-  <!-- 'music/morethanwords2.opus', -->
+  'music/morethanwords1.opus',
+  'music/morethanwords2.opus',
   <!-- 'music/happy.opus', -->
   <!-- 'music/electricity.opus', -->
   'music/callmydad.opus',
-  <!-- 'music/drifter.opus' -->
+  'music/drifter.opus'
 ];
 let currentTrack = Math.floor(Math.random() * playlist.length);
 
@@ -125,6 +125,7 @@ const spriteSources = [
   { src: 'sprites/001.png', link: 'https://ko-fi.com/corbari_j/shop', marked: true },
   { src: 'sprites/002.png', link: 'https://www.instagram.com/j_corbari/', marked: true },
   { src: 'sprites/003.png', link: 'https://www.instagram.com/maggiemoon.art', marked: true },
+  { src: 'sprites/004.png', link: 'https://toyhou.se/CalixtaTepes', marked: true }
 ];
 
 // Expanded 12-color palette
@@ -452,7 +453,9 @@ canvas.addEventListener('dblclick', () => {
 <footer>
 
 <!-- Websiteout Counter -->
-<script type="text/javascript" src="https://counter.websiteout.com/js/36/0/6279/1"></script>
+<div style="display:none">
+  <script type="text/javascript" src="https://counter.websiteout.com/js/36/0/6279/1"></script>
+</div>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QFZ12WZF1"></script>
