@@ -199,6 +199,46 @@ pre {
     toggleCase 1.5s ease-in-out infinite;
 }
 
+.bid-here {
+    font-size: 2rem;
+}
+
+.menu2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: normal; /* allow line breaks */
+}
+
+.menu2-item {
+  display: inline-block;
+  margin: 0; /* no extra spacing between boxes */
+}
+
+.menu2-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  font-size: clamp(12px, 2vw, 16px);
+  padding: 0 0.25rem;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.menu2-link::before {
+  content: "[";
+  margin-right: 0.1rem;
+}
+
+.menu2-link::after {
+  content: "]";
+  margin-left: 0.1rem;
+}
+
+.menu2-link:hover {
+}
+
 @keyframes spinGradient {
   0% {
     background-position: 0% 50%;
