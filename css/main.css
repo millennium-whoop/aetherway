@@ -200,7 +200,7 @@ pre {
 }
 
 .bid-here {
-    font-size: 2rem;
+  animation: toggleCase 1.5s ease-in-out infinite;
 }
 
 .menu2 {
