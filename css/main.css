@@ -262,7 +262,131 @@ pre {
   }
 }
 
+.icon-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center; 
+  padding: 1em;
+}
 
+.icon-gallery a img {
+    width: auto;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.icon-gallery a img:hover {
+  transform: scale(2);
+}
+
+.center-me {
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.abdoopt-icon {
+  padding: 1em;  
+}
+
+/* System 7 button */
+:root {
+  --face: rgba(0,0,0, 0.2);
+  --border-dark: rgba(0,0,0, 0.35);
+  --border-light: rgba(255,255,255, 1);
+  --shadow-dark: rgba(0,0,0, 0.24);
+  --shadow-light: rgba(255,255,255, 0.03);
+  --text: rgba(0,0,0, 1);
+  --disabled-face: rgba(255,255,255, 0.06);
+  --disabled-text: rgba(0,0,0, 0.54);
+  --focus: rgba(0,120,215,0.25);
+}
+
+button.sys7,
+a.sys7 {
+  text-decoration: none;
+  appearance: none;
+  border: 0.125rem solid black; /* = 2px */
+  padding: 0.5rem 1.125rem; /* = 8px and 18px */
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--face);
+  box-shadow:
+    -3px -3px 0 0 var(--border-dark) inset,
+    3px 3px 0 0 var(--border-light) inset,
+    inset 1px 1px 0 var(--shadow-dark),
+    inset -1px -1px 0 var(--shadow-light);
+  border-radius: 0.2rem;
+  font-weight: 600;
+  user-select: none;
+  transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
+  font-family: monospace;
+}
+
+/* Hover */
+:root {
+  --glow: 0 0 0 6px var(--focus); /* default glow */
+}
+
+button.sys7:hover:enabled,
+a.sys7:hover,
+.sys7:focus {
+  outline: none;
+  background: linear-gradient(#e0e0e0, #c6c6c6);
+  animation: rainbow 1s linear infinite,
+             toggleCase 1.5s ease-in-out infinite;
+  box-shadow:
+    -3px -3px 0 0 var(--border-dark) inset,
+     3px  3px 0 0 var(--border-light) inset,
+     inset 1px 1px 0 var(--shadow-dark),
+     inset -1px -1px 0 var(--shadow-light),
+     var(--glow);
+}
+
+@keyframes rainbow {
+  0%   { --glow: 0 0 10px 3px hsl(0,   100%, 50%); }
+  25%  { --glow: 0 0 10px 3px hsl(120, 100%, 50%); }
+  50%  { --glow: 0 0 10px 3px hsl(240, 100%, 50%); }
+  75%  { --glow: 0 0 10px 3px hsl(300, 100%, 50%); }
+  100% { --glow: 0 0 10px 3px hsl(360, 100%, 50%); }
+}
+
+/* Active (pressed) */
+button.sys7:active:enabled,
+a.sys7:active {
+  transform: translateY(1px);
+  background: var(--shadow-dark);
+  box-shadow:
+    -3px -3px 0 0 var(--border-light) inset,
+    3px 3px 0 0 var(--border-dark) inset,
+    inset 1px 1px 0 var(--shadow-light),
+    inset -1px -1px 0 var(--shadow-dark);
+}
+
+/* Disabled (only buttons can be disabled) */
+button.sys7:disabled {
+  cursor: default;
+  color: var(--disabled-text);
+  background: linear-gradient(var(--disabled-face), #e5e5e5);
+  box-shadow:
+    -3px -3px 0 0 #ffffff inset,
+    3px 3px 0 0 #bdbdbd inset;
+  opacity: 0.95;
+}
+
+/* Icon inside button/link */
+.sys7 .icon {
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
+  transform: translateY(1px);
+}
 
 
 @media (orientation: landscape) {

@@ -1,2 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open on Aetherway</title><link>https://millennium-whoop.github.io/aetherway/tags/open/</link><description>Recent content in Open on Aetherway</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 25 Oct 2025 14:02:45 -0300</lastBuildDate><atom:link href="https://millennium-whoop.github.io/aetherway/tags/open/index.xml" rel="self" type="application/rss+xml"/><item><title>#006 - Bun Bun</title><link>https://millennium-whoop.github.io/aetherway/abdoopts/006/</link><pubDate>Sat, 25 Oct 2025 14:02:45 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/abdoopts/006/</guid><description>&lt;p&gt;&lt;img src="https://millennium-whoop.github.io/aetherway/abdoopts/006.gif" alt="006"&gt;&lt;/p&gt;
-&lt;p&gt;She &lt;em&gt;looks&lt;/em&gt; all sweet n’ fluffy、 ne〜？ But don’t be fooled〜 this lil cutie totally loves showin’ off her tail pics〜♡ (≧艸≦*)☆&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open on Aetherway</title>
+    <link>http://localhost:1313/aetherway/tags/open/</link>
+    <description>Recent content in Open on Aetherway</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/aetherway/tags/open/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
