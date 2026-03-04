@@ -294,6 +294,21 @@ pre {
   padding: 1em;  
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0; /* add if needed */
+  align-items: stretch;
+}
+
+.gallery img,
+.gallery video {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
 /* System 7 button */
 :root {
   --face: rgba(0,0,0, 0.2);
@@ -327,6 +342,10 @@ a.sys7 {
   user-select: none;
   transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
   font-family: monospace;
+
+    display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 /* Hover */
