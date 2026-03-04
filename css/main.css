@@ -342,10 +342,9 @@ a.sys7 {
   user-select: none;
   transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
   font-family: monospace;
-
-    display: block;
+  display: block;
   width: fit-content;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 /* Hover */
