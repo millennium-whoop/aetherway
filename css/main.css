@@ -322,6 +322,8 @@ pre {
   --focus: rgba(0,120,215,0.25);
 }
 
+
+button,
 button.sys7,
 a.sys7 {
   text-decoration: none;
@@ -433,6 +435,8 @@ button.sys7:disabled {
   bottom: 0;
   pointer-events: none;
   z-index: 3;
+  transform: translateZ(0);
+  will-change: transform;
 
   background:
     /* Vignette */

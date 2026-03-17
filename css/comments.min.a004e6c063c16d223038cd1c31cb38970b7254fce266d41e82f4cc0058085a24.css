@@ -1,0 +1,1 @@
+:is(input,textarea,select):focus{outline:2px solid blue}
