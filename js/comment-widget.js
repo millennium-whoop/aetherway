@@ -376,13 +376,6 @@ function createComment(data) {
     let meta = document.createElement('div');
     meta.className = 'c-meta';
 
-    // Name of user
-    let name = document.createElement('span');
-    let filteredName = data.Name;
-    if (s_wordFilterOn) {filteredName = filteredName.replace(v_filteredWords, s_filterReplacement)}
-    name.innerText = filteredName;
-    name.className = 'c-name';
-    meta.appendChild(name);
 
     // Website URL, if one was provided
     if (data.Website) {
@@ -392,6 +385,14 @@ function createComment(data) {
         site.className = 'c-site';
         meta.appendChild(site);
     }
+
+    // Name of user
+    let name = document.createElement('span');
+    let filteredName = data.Name;
+    if (s_wordFilterOn) {filteredName = filteredName.replace(v_filteredWords, s_filterReplacement)}
+    name.innerText = filteredName;
+    name.className = 'c-name';
+    meta.appendChild(name);
 
     // Timestamp
     let time = document.createElement('span');
@@ -420,7 +421,20 @@ function convertTimestamp(timestamp) {
     const timezoneDiff = (s_timezone * 60 + date.getTimezoneOffset()) * -1;
     let offsetDate = new Date(date.getTime() + timezoneDiff * 60 * 1000);
     if (s_daylightSavings) {offsetDate = isDST(offsetDate)}
-    return [offsetDate.toLocaleString(), offsetDate.toLocaleDateString()];
+    return [
+        offsetDate.toLocaleString('ja-JP', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit'
+        }),
+        offsetDate.toLocaleDateString('ja-JP', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        })
+    ];
 }
 // DST checker
 function isDST(date) {
