@@ -59,7 +59,7 @@ const s_submitButtonLabel = 'Submit';
 const s_loadingText = 'Loading comments...';
 const s_noCommentsText = 'No comments yet!';
 const s_closedCommentsText = 'Comments are closed temporarily!';
-const s_websiteText = 'Website'; // The links to websites left by users on their comments
+const s_websiteText = 'Visit site ↗'; // The links to websites left by users on their comments
 const s_replyButtonText = 'Reply'; // The button for replying to someone
 const s_replyingText = 'Replying to'; // The text that displays while the user is typing a reply
 const s_expandRepliesText = 'Show Replies';
@@ -75,12 +75,6 @@ const s_rightButtonText = '>>';
 // Fix the URL parameters setting for Rarebit just in case
 if (s_fixRarebitIndexPage) {s_includeUrlParameters = true}
 
-// Apply CSS
-const c_cssLink = document.createElement('link');
-c_cssLink.type = 'text/css';
-c_cssLink.rel = 'stylesheet';
-c_cssLink.href = s_stylePath;
-document.getElementsByTagName('head')[0].appendChild(c_cssLink);
 
 // HTML Form
 const v_mainHtml = `
@@ -275,17 +269,23 @@ function displayComments(comments) {
     v_commentMin = v_commentMax - s_commentsPerPage;
 
     // Main comments (not replies)
-    comments.reverse(); // Newest comments go to top
+    comments.reverse(); 
     for (i = 0; i < comments.length; i++) {
         let comment = createComment(comments[i]);
         
+        // --- NEW: Create a wrapper div for the buttons ---
+        let controlsDiv = document.createElement('div');
+        controlsDiv.className = 'c-controls'; // You can style this in CSS
+
         // Reply button
         let button = document.createElement('button');
         button.innerHTML = s_replyButtonText;
         button.value = comment.id;
         button.setAttribute('onclick', `openReply(this.value)`);
         button.className = 'c-replyButton';
-        comment.appendChild(button);
+        
+        // Add Reply button to the wrapper instead of the comment directly
+        controlsDiv.appendChild(button);
 
         // Choose whether to display or not based on page number
         comment.style.display = 'none';
@@ -294,8 +294,12 @@ function displayComments(comments) {
         comment.className = 'c-comment';
         let li = document.createElement('li');
         li.appendChild(comment);
+        
+        // --- MOVE: Append the controlsDiv to the comment ---
+        comment.appendChild(controlsDiv); 
+
         c_list.appendChild(li);
-        a_commentDivs.push(document.getElementById(comment.id)); // Add to array for use later
+        a_commentDivs.push(document.getElementById(comment.id)); 
     }
 
     // Replies
@@ -319,19 +323,28 @@ function displayComments(comments) {
         container.appendChild(li);
     }
 
-    // Handle adding the buttons to show or hide replies if collapsed replies are enabled
+    // Handle adding the buttons to show or hide replies
     if (s_collapsedReplies) {
         const containers = document.getElementsByClassName('c-replyContainer');
         for (i = 0; i < containers.length; i++) {
             const num = containers[i].childNodes.length;
-            const parentDiv = containers[i].parentElement;
+            const parentDiv = containers[i].parentElement; // This is the 'comment' div
+
+            // Find the controls div we created earlier
+            const controlsDiv = parentDiv.querySelector('.c-controls');
 
             // The button to expand replies
             const button = document.createElement('button');
             button.innerHTML = s_expandRepliesText + ` (${num})`;
-            button.setAttribute('onclick', `expandReplies(this.parentElement.id)`);
+            button.setAttribute('onclick', `expandReplies(this.parentElement.parentElement.id)`); // Note: parentElement.parentElement now because it's inside the div
             button.className = 'c-expandButton';
-            parentDiv.insertBefore(button, parentDiv.lastChild);
+
+            // Append to the controlsDiv if it exists, otherwise fallback to parentDiv
+            if (controlsDiv) {
+                controlsDiv.appendChild(button);
+            } else {
+                parentDiv.insertBefore(button, parentDiv.lastChild);
+            }
         }
     }
 
@@ -523,34 +536,44 @@ function expandReplies(id) {
 }
 
 function changePage(dir) {
+    // 1. Determine direction
+    let step = (dir === 'right') ? 1 : -1;
+    let targetPage = v_pageNum + step;
+
+    // 2. Safety check: Exit if out of bounds
+    if (targetPage > v_amountOfPages || targetPage < 1) return;
+
+    // 3. CRITICAL: Update the global page tracker
+    v_pageNum = targetPage;
+
+    // 4. Update UI Buttons
     const leftButton = document.getElementById('c_leftButton');
     const rightButton = document.getElementById('c_rightButton');
+    
+    leftButton.disabled = (v_pageNum === 1);
+    rightButton.disabled = (v_pageNum === v_amountOfPages);
 
-    // Find directional number
-    let num;
-    switch (dir) {
-        case 'left': num = -1; break;
-        case 'right': num = 1; break;
-        default: num = 0; break;
-    }
-    let targetPage = v_pageNum + num;
-
-    // Cancel if impossible direction for safety, should never happen though
-    if (targetPage > v_amountOfPages || targetPage < 1) {return}
-
-    // Enable/disable buttons if needed
-    leftButton.disabled = false; rightButton.disabled = false;
-    if (targetPage == 1) {leftButton.disabled = true} // Can't go before page 1
-    if (targetPage == v_amountOfPages) {rightButton.disabled = true} // Can't go past the last page
-
-    // Hide all comments and then display the correct ones
-    v_pageNum = targetPage;
+    // 5. Recalculate which comments to show
     v_commentMax = s_commentsPerPage * v_pageNum;
     v_commentMin = v_commentMax - s_commentsPerPage;
-    for (i = 0; i < a_commentDivs.length; i++) {
-        a_commentDivs[i].style.display = 'none';
-        if (i >= v_commentMin && i < v_commentMax) {a_commentDivs[i].style.display = 'block'}
+
+    // 6. Toggle visibility
+    // We iterate through the parent 'li' elements to ensure the whole comment block hides
+    for (let i = 0; i < a_commentDivs.length; i++) {
+        const commentEl = a_commentDivs[i];
+        const parentLi = commentEl.parentElement; // The <li> we created in displayComments
+        
+        if (i >= v_commentMin && i < v_commentMax) {
+            commentEl.style.display = 'block';
+            if(parentLi) parentLi.style.display = 'block';
+        } else {
+            commentEl.style.display = 'none';
+            if(parentLi) parentLi.style.display = 'none';
+        }
     }
+    
+    // Optional: Scroll back to the top of the comment section
+    document.getElementById('c_widget').scrollIntoView({ behavior: 'smooth' });
 }
 
 getComments(); // Run once on page load

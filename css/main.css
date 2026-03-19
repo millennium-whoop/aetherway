@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=M+PLUS+2:wght@400;700&family=Noto+Serif:wght@400;700&display=swap');
+
 html {
     scroll-behavior: smooth
 }
@@ -7,7 +9,7 @@ html {
 }
 
 body {
-    font-family: local('Liberation Serif'), serif;
+    font-family: Noto Serif, Liberation Serif, DejaVu Serif, serif;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -313,7 +315,7 @@ pre {
 :root {
   --face: rgba(0,0,0, 0.2);
   --border-dark: rgba(0,0,0, 0.35);
-  --border-light: rgba(255,255,255, 1);
+  --border-light: rgba(255,255,255, .7);
   --shadow-dark: rgba(0,0,0, 0.24);
   --shadow-light: rgba(255,255,255, 0.03);
   --text: rgba(0,0,0, 1);
