@@ -1,0 +1,86 @@
+.card-mystery {
+    border: 2px dashed #f1c40f;
+    background: #fef9e7;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.card-mystery:hover { transform: scale(1.02); }
+
+.card-ui {
+    border: 2px solid #2ecc71;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    max-width: 250px;
+    margin: 0 auto;
+    background: pink;
+}
+
+.card-ui img { width: 100%; border-radius: 8px; }
+.collected-tag { font-size: 0.7rem; color: #2ecc71; text-transform: uppercase; font-weight: bold; }
+
+.card-revealed {
+}
+
+.card-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.2);
+}
+
+.card-wrapper::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+
+  transform: translateZ(0);
+  will-change: transform;
+
+  background:
+    /* RGB phosphor stripes */
+    linear-gradient(
+      90deg,
+      rgba(255,0,0,0.06),
+      rgba(0,255,0,0.02),
+      rgba(0,0,255,0.06)
+    ),
+
+    /* Scanlines */
+    linear-gradient(
+      rgba(18,16,16,0) 50%,
+      rgba(0,0,0,0.25) 50%
+    ),
+
+    /* Vignette (should be last so it sits behind) */
+    radial-gradient(
+      70% 85% at 50% 50%,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.05) 100%
+    );
+
+  background-size:
+    3px 100%,   /* RGB stripes */
+    100% 2px,   /* scanlines */
+    100% 100%;  /* vignette */
+
+  background-repeat: repeat, repeat, no-repeat;
+
+  box-shadow:
+    inset 0 0 1vw rgba(0,0,0,0.5),
+    inset 0 0 6vw rgba(0,0,0,0.4),
+    inset 0 0 15vh rgba(0,0,0,0.2);
+}
+
