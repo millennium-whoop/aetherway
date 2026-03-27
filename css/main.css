@@ -311,6 +311,39 @@ pre {
   display: block;
 }
 
+#home-widgets-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+}
+
+.home-widgets {
+    background: pink;
+    flex: 0 0 calc(50% - 10px);
+    border: 2px solid black;
+    font-size: .8rem;
+}
+
+#abdoopts-widget ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center; 
+  padding: 0;
+}
+
+#abdoopts-widget h2 {
+    width: 100%;
+}
+
+#abdoopts-widget ul li {
+    background: green;
+    width: fit-content;
+}
+
+
 /* System 7 button */
 :root {
   --face: rgba(0,0,0, 0.2);
