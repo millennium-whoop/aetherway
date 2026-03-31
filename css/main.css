@@ -312,9 +312,11 @@ pre {
 }
 
 #home-widgets-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: blue;
 }
 
 .home-widgets {
@@ -322,6 +324,15 @@ pre {
     flex: 0 0 calc(50% - 10px);
     border: 2px solid black;
     font-size: .8rem;
+    height: fit-content;
+    padding: .5rem;
+}
+
+
+.home-widgets h2,
+.home-widgets h3 {
+    background: blue;
+    margin:0 !important;
 }
 
 #abdoopts-widget ul {
@@ -334,14 +345,138 @@ pre {
   padding: 0;
 }
 
-#abdoopts-widget h2 {
+#abdoopts-widget h3 {
     width: 100%;
 }
 
-#abdoopts-widget ul li {
-    background: green;
-    width: fit-content;
+.abdoopts-widget-button {
+
+  border: 0.125rem solid black; /* = 2px */
+  cursor: pointer;
+  color: var(--text);
+  box-shadow:
+    -3px -3px 0 0 var(--border-dark) inset,
+    3px 3px 0 0 var(--border-light) inset,
+    inset 1px 1px 0 var(--shadow-dark),
+    inset -1px -1px 0 var(--shadow-light);
+  border-radius: 0.2rem;
+  font-weight: 600;
+  user-select: none;
+  transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
+  font-family: monospace;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  background: rgba(0,0,0,.8);
 }
+
+
+
+#blog-widget ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#blog-widget ul li{
+    display: flex;
+    background: cyan;
+    margin: .5rem;
+    padding: .5rem;
+    justify-content: space-between; 
+    font-family: 'M PLUS 2', sans-serif;
+}
+
+.blog-widget-title {
+    width: 70%;
+    background: lime;
+}
+
+.blog-widget-date {
+    font-size: .6rem;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+#epic-widget {
+  background: url("../buttons/88x31_01.gif");
+
+  color: white;
+  text-shadow:
+    2px 2px 0 black,
+    -2px 2px 0 black,
+    2px -2px 0 black,
+    -2px -2px 0 black,
+    0 2px 0 black,
+    2px 0 0 black,
+    0 -2px 0 black,
+    -2px 0 0 black;
+}
+
+
+#epic-widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#epic-widget ul li {
+    background: rgba(0,0,0,.5);
+    display: flex;
+    margin: .5rem;
+    padding: .5rem;
+    justify-content: space-between; 
+}
+
+#spacedvd-widget {
+    background: black;
+    color: var(--spacedvd-button);
+    animation: spacedvd-button 9s linear infinite;
+}
+
+#spacedvd-widget img{
+    border: 1px solid var(--spacedvd-button);
+}
+
+#spacedvd-widget a{
+  text-decoration: none;
+  appearance: none;
+  border: 0.125rem solid var(--spacedvd-button);
+  color: var(--spacedvd-button);
+  padding: 0.5rem 1.125rem; /* = 8px and 18px */
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  user-select: none;
+  transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
+  font-family: monospace;
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+
+#spacedvd-widget a:hover {
+    background: var(--spacedvd-button);
+    color: black;
+}
+
+
+@keyframes spacedvd-button {
+  0%    { --spacedvd-button: hsl(  0, 100%, 50%); }
+  12.5% { --spacedvd-button: hsl( 45, 100%, 50%); }
+  25%   { --spacedvd-button: hsl( 90, 100%, 50%); }
+  37.5% { --spacedvd-button: hsl(135, 100%, 50%); }
+  50%   { --spacedvd-button: hsl(180, 100%, 50%); }
+  62.5% { --spacedvd-button: hsl(225, 100%, 50%); }
+  75%   { --spacedvd-button: hsl(270, 100%, 50%); }
+  87.5% { --spacedvd-button: hsl(315, 100%, 50%); }
+  100%  { --spacedvd-button: hsl(360, 100%, 50%); }
+}
+
 
 
 /* System 7 button */
@@ -513,4 +648,52 @@ button.sys7:disabled {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
+}
+
+
+.crt-mini {
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-mini::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  transform: translateZ(0);
+  will-change: transform;
+
+  background:
+    /* Vignette */
+    radial-gradient(
+      70% 85% at 50% 50%,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.05) 100%
+    ),
+
+    /* Scanlines */
+    linear-gradient(
+      rgba(18,16,16,0) 50%,
+      rgba(0,0,0,0.25) 50%
+    ),
+
+    /* RGB phosphor stripes */
+    linear-gradient(
+      90deg,
+      rgba(255,0,0,0.06),
+      rgba(0,255,0,0.02),
+      rgba(0,0,255,0.06)
+    );
+
+  background-size:
+    100% 100%,
+    100% 2px,
+    3px 100%;
+
+  box-shadow:
+    inset 0 0 1vw rgba(0,0,0,0.5),
+    inset 0 0 6vw rgba(0,0,0,0.4),
+    inset 0 0 15vh rgba(0,0,0,0.2);
 }
