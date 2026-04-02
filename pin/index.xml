@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pins on Aetherway</title><link>https://millennium-whoop.github.io/aetherway/pin/</link><description>Recent content in Pins on Aetherway</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 09 Mar 2026 13:38:15 -0300</lastBuildDate><atom:link href="https://millennium-whoop.github.io/aetherway/pin/index.xml" rel="self" type="application/rss+xml"/><item><title>loading new colleciton・・・</title><link>https://millennium-whoop.github.io/aetherway/pin/new-collection/</link><pubDate>Mon, 09 Mar 2026 13:38:15 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/pin/new-collection/</guid><description>&lt;!-- 
+
+
+
+&lt;div class="card-hunt-wrapper" id="wrapper-002"&gt;
+ &lt;div class="card-mystery" id="mystery-002" onclick="unlockCard('002')"&gt;
+ &lt;span class="sparkle"&gt;✨&lt;/span&gt;
+ &lt;p&gt;You found a hidden card! Click to reveal.&lt;/p&gt;
+ &lt;/div&gt;
+
+ &lt;div class="card-revealed" id="content-002" style="display: none;"&gt;
+ &lt;div class="card-wrapper"&gt;
+ &lt;div class="card-ui"&gt;
+ &lt;img src="abdoopts/icons/002.gif/" alt="002"&gt;
+ &lt;h3&gt;002&lt;/h3&gt;
+ &lt;p&gt;&lt;/p&gt;
+ &lt;span class="collected-tag"&gt;Stored in Codex!&lt;/span&gt;
+ &lt;/div&gt;
+
+ &lt;button class="close-btn" onclick="closeBox()"&gt;×&lt;/button&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+
+ &lt;script&gt;
+ const boxId = "content-002";
+
+ function closeBox() {
+ document.getElementById(boxId).style.display = "none";
+ localStorage.setItem(boxId + "Closed", "true");
+ }
+
+ document.addEventListener("DOMContentLoaded", function () {
+ if (localStorage.getItem(boxId + "Closed") === "true") {
+ const box = document.getElementById(boxId);
+ if (box) box.style.display = "none";
+ }
+ });
+ &lt;/script&gt;
+
+&lt;/div&gt;
+
+ --&gt;
+&lt;p&gt;&lt;img src="https://millennium-whoop.github.io/aetherway/new-collection/1.png" alt="1"&gt;
+&lt;img src="https://millennium-whoop.github.io/aetherway/new-collection/2.png" alt="2"&gt;&lt;/p&gt;</description></item><item><title>１６ ways ２ get attached</title><link>https://millennium-whoop.github.io/aetherway/pin/sticky/</link><pubDate>Mon, 02 Mar 2026 13:41:29 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/pin/sticky/</guid><description>&lt;p&gt;peel slow、press firm、&lt;/p&gt;
+&lt;p&gt;stick it anywhere u like・・・&lt;/p&gt;
+&lt;p&gt;careful sweetie〜&lt;/p&gt;
+&lt;p&gt;once it grabs on、no letting go♡&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://millennium-whoop.github.io/aetherway/space-dvd/"&gt;Space DVD&lt;/a&gt; stickersheet〜 holographic vinyl magic&lt;/p&gt;
+&lt;p&gt;１６ &lt;a href="https://millennium-whoop.github.io/aetherway/abdoopts/"&gt;abdoopts&lt;/a&gt; just waiting ２ cling ２ u〜&lt;/p&gt;
+&lt;p&gt;mmm〜&lt;/p&gt;
+&lt;p&gt;u’re officially in a sticky situation ne〜☆&lt;/p&gt;
+&lt;p&gt;go ahead・・・&lt;/p&gt;
+&lt;p&gt;don’t be shy〜&lt;/p&gt;
+&lt;a href="https://www.etsy.com/listing/4456308446/retro-pixel-art-holographic-sticker" class="sys7"&gt;
+Stick with me〜☆
+&lt;/a&gt;
+
+
+
+&lt;div class="gallery"&gt;
+ 
+ 
+ 
+
+ 
+
+ 
+ &lt;video autoplay loop muted playsinline preload="metadata"&gt;
+ &lt;source src="https://millennium-whoop.github.io/aetherway/sticky/20260222_165631_small.mp4" type="video/mp4"&gt;
+ &lt;/video&gt;
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ &lt;img src="https://millennium-whoop.github.io/aetherway/sticky/20260222_170005.webp" alt="20260222_170005.webp" loading="lazy" /&gt;
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ &lt;video autoplay loop muted playsinline preload="metadata"&gt;
+ &lt;source src="https://millennium-whoop.github.io/aetherway/sticky/20260222_170504_small.mp4" type="video/mp4"&gt;
+ &lt;/video&gt;
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ &lt;img src="https://millennium-whoop.github.io/aetherway/sticky/20260223_112208.webp" alt="20260223_112208.webp" loading="lazy" /&gt;
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ &lt;video autoplay loop muted playsinline preload="metadata"&gt;
+ &lt;source src="https://millennium-whoop.github.io/aetherway/sticky/20260223_112711_small.mp4" type="video/mp4"&gt;
+ &lt;/video&gt;
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ &lt;video autoplay loop muted playsinline preload="metadata"&gt;
+ &lt;source src="https://millennium-whoop.github.io/aetherway/sticky/20260223_112840_small.mp4" type="video/mp4"&gt;
+ &lt;/video&gt;
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ &lt;img src="https://millennium-whoop.github.io/aetherway/sticky/20260223_113216.webp" alt="20260223_113216.webp" loading="lazy" /&gt;
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ &lt;img src="https://millennium-whoop.github.io/aetherway/sticky/20260223_113332.webp" alt="20260223_113332.webp" loading="lazy" /&gt;
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ &lt;img src="https://millennium-whoop.github.io/aetherway/sticky/20260223_113405.webp" alt="20260223_113405.webp" loading="lazy" /&gt;
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ &lt;video autoplay loop muted playsinline preload="metadata"&gt;
+ &lt;source src="https://millennium-whoop.github.io/aetherway/sticky/20260223_113752_small.mp4" type="video/mp4"&gt;
+ &lt;/video&gt;
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ &lt;img src="https://millennium-whoop.github.io/aetherway/sticky/20260227_092836.webp" alt="20260227_092836.webp" loading="lazy" /&gt;
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ &lt;img src="https://millennium-whoop.github.io/aetherway/sticky/20260227_103507.webp" alt="20260227_103507.webp" loading="lazy" /&gt;
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ &lt;img src="https://millennium-whoop.github.io/aetherway/sticky/20260227_110014.webp" alt="20260227_110014.webp" loading="lazy" /&gt;
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ &lt;video autoplay loop muted playsinline preload="metadata"&gt;
+ &lt;source src="https://millennium-whoop.github.io/aetherway/sticky/20260227_164147_small.mp4" type="video/mp4"&gt;
+ &lt;/video&gt;
+ 
+
+ 
+ 
+&lt;/div&gt;</description></item><item><title>this looks better on u</title><link>https://millennium-whoop.github.io/aetherway/pin/dvd-shirts/</link><pubDate>Wed, 12 Nov 2025 19:17:27 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/pin/dvd-shirts/</guid><description>&lt;p&gt;sweetie〜 listen ne〜♡ （⁄⁄&amp;gt;////&amp;lt;⁄⁄）&lt;/p&gt;
+&lt;p&gt;the &lt;strong&gt;&lt;a href="https://millennium-whoop.github.io/aetherway/space-dvd"&gt;Space DVD&lt;/a&gt; tees&lt;/strong&gt; are lookin’ suuuper interdimensional rn〜 like yabai kawaii〜！！&lt;/p&gt;
+&lt;p&gt;this animation〜？ ugh such a spacetime glitch moment lol〜 （≧▽≦）&lt;/p&gt;
+&lt;p&gt;but in ur reality〜 the print stays one perfect color ne〜 totally not movin’ so no worries〜♡&lt;/p&gt;
+&lt;p&gt;we got &lt;strong&gt;cyan、yellow、magenta、red、green、blue、purple、or orange〜&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;pick ur fav color vibe ne〜 n’ boom☆ u just leveled up into a full on dimension drifter〜！！ （๑˃̵ᴗ˂̵）و&lt;/p&gt;
+&lt;p&gt;each print’s made with our &lt;em&gt;ultra secret Aetherway magic tech&lt;/em&gt;〜☆&lt;/p&gt;</description></item><item><title>Don't be a Naked Person!</title><link>https://millennium-whoop.github.io/aetherway/pin/naked-person/</link><pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate><guid>https://millennium-whoop.github.io/aetherway/pin/naked-person/</guid><description>&lt;p&gt;&lt;img src="https://millennium-whoop.github.io/aetherway/images/ladies-tshirt-extended-transparent.webp" alt="Dimensional Ladies"&gt; &lt;img src="https://millennium-whoop.github.io/aetherway/images/tea-doodles.webp" alt="Tea_Doodles"&gt; &lt;img src="https://millennium-whoop.github.io/aetherway/images/0mesant.webp" alt="0mesant"&gt; &lt;img src="https://millennium-whoop.github.io/aetherway/images/tom-thread.webp" alt="gushfroot"&gt; &lt;img src="https://millennium-whoop.github.io/aetherway/images/tagline.gif" alt="Don’t be a Naked Person!"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.instagram.com/tea_doodles"&gt;@tea_doodles&lt;/a&gt; , &lt;a href="https://www.instagram.com/0mesant"&gt;@0mesant&lt;/a&gt; , &lt;a href="https://www.instagram.com/gushfroot"&gt;@gushfroot&lt;/a&gt; ,&lt;/p&gt;
+&lt;p&gt;Thanks for making it real; you truly are &lt;em&gt;Dimensional&lt;/em&gt; .&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visit my &lt;a href="https://ko-fi.com/corbari_j/shop"&gt;Interdimensional Shop&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>No Sad, Only Zoom-zoom Smiles</title><link>https://millennium-whoop.github.io/aetherway/pin/no-sad/</link><pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate><guid>https://millennium-whoop.github.io/aetherway/pin/no-sad/</guid><description>&lt;p&gt;&lt;img src="https://millennium-whoop.github.io/aetherway/images/no-scanlines-1080.webp" alt="No sad, only zoom-zoom smiles (T-Shirt)"&gt; &lt;img src="https://millennium-whoop.github.io/aetherway/images/no-sad-text.png" alt="No sad, only zoom-zoom smiles (Only text)"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://millennium-whoop.github.io/aetherway/abdoopts/001/"&gt;Millennium Whoop&lt;/a&gt;, the iconic DJ of &lt;a href="https://millennium-whoop.github.io/aetherway/space-dvd/"&gt;Space DVD&lt;/a&gt;, is adored by fans across the &lt;em&gt;Aetherway&lt;/em&gt; . Known for her love of &lt;em&gt;&lt;a href="https://millennium-whoop.github.io/aetherway/abdoopts/003/"&gt;Madame Astra’s&lt;/a&gt; Nebula Cupcakes&lt;/em&gt; and her goal to become &lt;em&gt;President of the Galaxy&lt;/em&gt; , her fanbase is rapidly growing—so much so that one planet even ran out of resources producing her merch. Her catchphrase, &lt;em&gt;“No sad, only zoom-zoom smiles,”&lt;/em&gt; has reached mantra status in &lt;em&gt;Interdimensional Speech&lt;/em&gt;, likely meaning “no sadness, only in-between smiles.”&lt;/p&gt;</description></item></channel></rss>
