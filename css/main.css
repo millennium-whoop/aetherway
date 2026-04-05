@@ -112,7 +112,7 @@ hr {}
 }
 
 .home img {
-    mix-blend-mode: darken
+    mix-blend-mode: darken;
 }
 
 pre::-webkit-scrollbar {
@@ -137,7 +137,7 @@ pre {
 #button-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 90px);
-  gap: 10px;
+  gap: 5rem;
   justify-content: center;
 }
 
@@ -313,22 +313,21 @@ pre {
 
 #home-widgets-wrapper {
     column-count: 2; 
-    column-gap: 10px;
+    column-gap: .5rem;
     width: 100%;
 }
 
 .home-widgets {
-display: inline-block; /* Required for column-count to work */
+    display: inline-block; /* Required for column-count to work */
     width: 100%;
-    background: pink;
-    border: 2px solid black;
-    margin-bottom: -2px; /* Pulls the next one up to touch borders */
+    border: 1px solid black;
     
     /* Prevents a tile from splitting across two columns */
     break-inside: avoid; 
     font-size: .8rem;
     padding: .5rem;
-margin-bottom: 10px !important;
+    margin-bottom: .5rem !important;
+    background: white;
 }
 
 
@@ -361,6 +360,31 @@ margin-bottom: 10px !important;
     animation: spacedvd-button 9s linear infinite;
 }
 
+
+#abdoopts-widget-menu {
+list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: .5rem;
+}
+
+#abdoopts-widget-menu li {
+    background:pink;
+display: block;
+  text-decoration: none;
+}
+
+
+#abdoopts-widget-menu li::before {
+  content: "[";
+  margin-right: 0.1rem;
+}
+
+#abdoopts-widget-menu li::after {
+  content: "]";
+  margin-left: 0.1rem;
+}
+
 #abdoopts-widget h3 {
     width: 100%;
 }
@@ -383,12 +407,17 @@ margin-bottom: 10px !important;
   display: block;
   width: fit-content;
   margin: 0 auto;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.3);
 }
 
 .abdoopts-widget-button {
   position: relative;
   overflow: hidden;
+}
+
+.abdoopts-widget-button:hover {
+    background: var(--spacedvd-button);
+    animation: spacedvd-button .1s linear infinite;
 }
 
 .abdoopts-widget-button img {
@@ -423,6 +452,10 @@ margin-bottom: 10px !important;
   background-size: 40px 40px, 40px 40px;
 
   animation: stripeSmooth 4s ease-in-out infinite alternate;
+}
+
+#blog-widget a {
+    color:grey;
 }
 
 
@@ -467,7 +500,7 @@ margin-bottom: 10px !important;
 }
 
 .blog-widget-title {
-    width: 70%;
+    width: 65%;
 }
 
 .blog-widget-date {
@@ -487,17 +520,6 @@ margin-bottom: 10px !important;
 
 #epic-widget {
   background: url("../buttons/88x31_01.gif");
-
-  color: white;
-  text-shadow:
-    2px 2px 0 black,
-    -2px 2px 0 black,
-    2px -2px 0 black,
-    -2px -2px 0 black,
-    0 2px 0 black,
-    2px 0 0 black,
-    0 -2px 0 black,
-    -2px 0 0 black;
 }
 
 #epic-widget a {
@@ -519,11 +541,23 @@ margin-bottom: 10px !important;
     justify-content: space-between; 
 }
 
+#epic-widget ul li:hover {
+    background: rgba(0,0,0,.4);
+}
+
+#epic-widget a:hover {
+    color: cyan;
+}
+
+.epic-date {
+    color: white;
+}
+
 #spacedvd-widget {
     background: black;
     color: var(--spacedvd-button);
     animation: spacedvd-button 9s linear infinite;
-    border: 2px solid var(--spacedvd-button);
+    border: 1px solid var(--spacedvd-button);
 }
 
 #spacedvd-widget img{
@@ -548,28 +582,105 @@ margin-bottom: 10px !important;
   margin: 1rem auto;
 }
 
-#dynamic-banner {
+#spacedvd-widget a:hover {
+    background: var(--spacedvd-button);
+    color: black;
+
+}
+
+.dynamic-banner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   text-align: center;
   font-family: monospace;
   font-size: 1.2rem;
-  background: lime;
   width: 468px;
   height: 60px;
-
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  whit-space: nowrap;
   overflow: hidden;
-  text-align: center;
-
-  /* background: url("../buttons/88x31_01.gif"); */
+  margin-bottom: 1rem;
 }
 
-#banner-container {
-    background: blue;
+.standard-colors .dynamic-banner {
+  background: linear-gradient(
+    to right,
+    #c0c0c0 0% 14.2857%,
+    #c0c000 14.2857% 28.5714%,
+    #00c0c0 28.5714% 42.8571%,
+    #00c000 42.8571% 57.1428%,
+    #c000c0 57.1428% 71.4285%,
+    #c00000 71.4285% 85.7142%,
+    #0000c0 85.7142% 100%
+  );
+
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  color: white;
+}
+
+@keyframes scrollStripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.standard-colors .dynamic-banner:hover {
+  animation: scrollStripes 2s linear infinite;
+}
+
+.matrix-style .dynamic-banner {
+  background: #000;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.tiedye-style .dynamic-banner {
+  color: white;
+  font-style: italic;
+  background-image: 
+    radial-gradient(circle at 30% 30%, #ff00ea, transparent 50%),
+    radial-gradient(circle at 70% 20%, #00ffcc, transparent 50%),
+    radial-gradient(circle at 50% 80%, #ffee00, transparent 50%),
+    radial-gradient(circle at 20% 80%, #3300ff, transparent 50%),
+    radial-gradient(circle at 80% 80%, #ff4d00, transparent 50%);
+
+  mix-blend-mode: multiply;
+  
+}
+
+.banner {
+  display: none;
+}
+.banner.active {
+  display: block;
+}
+
+.banner-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.banner-wrapper {
     display: flex;
     justify-content: center;
+}
+
+.pin-wiget {
+}
+
+.pin-widget:hover {
+    border: 1px solid var(--spacedvd-button);
+    animation: spacedvd-button .1s linear infinite;
+}
+
+.pin-widget a {
+    display: flex;       /* This kills line-height issues instantly */
+    line-height: 0;      /* Alternative: sets the text height to zero */
+    text-decoration: none;
 }
 
 .pin-widget img,
@@ -577,11 +688,89 @@ margin-bottom: 10px !important;
   width: 100%;
   display: block;
   object-fit: cover;
+  vertical-align: bottom; /* or top */
 }
 
-.pin-widget:hover {
+#guestbook-widget {
 }
 
+#home2 {
+}
+
+#home2 h1 {
+    font-size: 8vw;
+    text-align: center;
+    width: 100%;
+    text-transform: none;
+    margin-bottom:0;
+    margin-top:0;
+}
+
+.logov4 {
+  background: pink;
+  width: 100%;
+}
+
+.logov4 svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logov4 rect {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.logov4 rect:nth-child(3n),
+.logov4 rect:nth-child(5n),
+.logov4 rect:nth-child(7n),
+.logov4 rect:nth-child(11n) {
+  animation: flicker var(--dur, 2s) steps(1) infinite;
+}
+
+.logov4 rect:nth-child(3n)  { --dur: 1.8s; }
+.logov4 rect:nth-child(5n)  { --dur: 2.6s; }
+.logov4 rect:nth-child(7n)  { --dur: 1.4s; }
+.logov4 rect:nth-child(11n) { --dur: 2.2s; }
+
+.logov4 rect:nth-child(4n)  { animation-delay: 0.3s; }
+.logov4 rect:nth-child(6n)  { animation-delay: 0.5s; }
+.logov4 rect:nth-child(9n)  { animation-delay: 0.2s; }
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0.2; }
+  60% { opacity: 0.6; }
+}
+
+.logov4 rect {
+  opacity: 1;
+  transition: fill 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+  transition: fill 0.3s ease 0.5s;
+}
+
+.logov4 rect:hover {
+  fill: var(--spacedvd-button) !important;
+  opacity: 1 !important;
+  animation-play-state: paused;
+  animation: spacedvd-button .1s linear infinite;
+  transition-delay: 0s;
+}
+
+.text-shadow {
+  color: white;
+  text-shadow:
+    2px 2px 0 black,
+    -2px 2px 0 black,
+    2px -2px 0 black,
+    -2px -2px 0 black,
+    0 2px 0 black,
+    2px 0 0 black,
+    0 -2px 0 black,
+    -2px 0 0 black;
+}
 
 @keyframes banner-scroll {
   0% { transform: translateY(0); }
@@ -598,13 +787,6 @@ margin-bottom: 10px !important;
 
   100% { transform: translateY(0); }
 }
-
-
-#spacedvd-widget a:hover {
-    background: var(--spacedvd-button);
-    color: black;
-}
-
 
 @keyframes spacedvd-button {
   0%    { --spacedvd-button: hsl(  0, 100%, 50%); }
@@ -738,6 +920,11 @@ button.sys7:disabled {
     #home-widgets-wrapper {
         column-count: 1;
     }
+
+    #banner-container {
+        display:none;
+    }
+
 }
 
 
@@ -845,4 +1032,28 @@ button.sys7:disabled {
     inset 0 0 1vw rgba(0,0,0,0.5),
     inset 0 0 6vw rgba(0,0,0,0.4),
     inset 0 0 15vh rgba(0,0,0,0.2);
+}
+
+
+.polka2 {
+  --dot-color: rgba(0,0,0,0.4); /* transparent black */
+
+  background-image:
+    radial-gradient(var(--dot-color) 2px, transparent 2px),
+    radial-gradient(var(--dot-color) 2px, transparent 2px);
+
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+
+  background-color: white;
+
+  animation: drift 4s linear infinite;
+
+  color: black;
+}
+
+
+@keyframes drift {
+  0% { background-position: 0 0, 16px 16px; }
+  100% { background-position: 32px 32px, 48px 48px; }
 }
