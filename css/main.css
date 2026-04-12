@@ -122,13 +122,26 @@ pre::-webkit-scrollbar {
 code {
     overflow-x: auto;
     scrollbar-width: none;
-    padding: 1rem;
-    font-family: monospace;
     white-space: pre-wrap;
     display: block;
-    background: #000;
-    color: #fafafa;
-    border-radius: 10px;
+
+
+	outline: none;
+    padding: .5rem;
+    background: rgba(255,255,255,0);
+    width: 100%;
+    margin-bottom: 1rem;
+
+    text-decoration: none;
+    appearance: none;
+    border: 0.125rem solid black; 
+    line-height: 1;
+    box-shadow: 3px 3px 0 0 var(--border-dark) inset;
+    border-radius: 0.2rem;
+    transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
+    font-family: JetBrains Mono, monospace;
+    font-size: .8rem; 
+    display: block;
 }
 
 pre {
@@ -137,9 +150,15 @@ pre {
 #button-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 90px);
-  gap: 5rem;
-  justify-content: center;
+  gap: .5rem;
+  justify-content: space-between;
 }
+
+#button-container img {
+    max-height: 31px;
+    max-width: 88px;
+}
+
 
 #pxwear img {
     height: 100dvh;
@@ -273,7 +292,8 @@ pre {
   padding: 1em;
 }
 
-.icon-gallery a img {
+.icon-gallery a img,
+#button-container a img {
     width: auto;
     height: auto;
     image-rendering: pixelated;
@@ -281,8 +301,10 @@ pre {
     transition: transform 0.3s;
 }
 
-.icon-gallery a img:hover {
+.icon-gallery a img:hover,
+#button-container a img:hover {
   transform: scale(2);
+  transition: transform 0.3s;
 }
 
 .center-me {
@@ -362,16 +384,15 @@ pre {
 
 
 #abdoopts-widget-menu {
-list-style-type: none;
-  padding: 0;
-  display: flex;
-  gap: .5rem;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: .5rem;
 }
 
 #abdoopts-widget-menu li {
-    background:pink;
-display: block;
-  text-decoration: none;
+    display: block;
+    text-decoration: none;
 }
 
 
@@ -655,6 +676,7 @@ display: block;
 .banner {
   display: none;
 }
+
 .banner.active {
   display: block;
 }
@@ -707,7 +729,6 @@ display: block;
 }
 
 .logov4 {
-  background: pink;
   width: 100%;
 }
 
