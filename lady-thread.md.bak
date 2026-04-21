@@ -1,0 +1,38 @@
++++
+title = "Lady Thread Generator"
+date = 2025-10-14
+image = "/images/generator3.gif"
++++
+
+<!-- {{< card id="001" >}} -->
+
+## Instructions
+
+1. Click/Tap the image to shuffle colors.
+2. Save your favorites.
+
+<div id="sketch-container">
+  <button id="screenshotButton">Save!</button>
+</div>
+
+<script src="/lady-thread/p5.min.js"></script>
+<script src="/lady-thread/ladythread.js"></script>
+
+<script>
+  let screenshotCounter = 0;
+
+  // Function to save a screenshot with counter and timestamp
+  function saveScreenshot() {
+    screenshotCounter++;
+    const timestamp = new Date().toISOString().replace(/[-:.T]/g, '');
+    const filename = `LadyThread_${screenshotCounter}_${timestamp}.png`;
+    saveCanvas(canvas, filename, 'png');
+  }
+
+  // Attach click event to screenshot button
+  const button = document.getElementById('screenshotButton');
+  button.addEventListener('click', saveScreenshot);
+
+  button.classList.add('sys7');
+</script>
+
