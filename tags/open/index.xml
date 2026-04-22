@@ -1,7 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open on Aetherway</title><link>https://millennium-whoop.github.io/aetherway/tags/open/</link><description>Recent content in Open on Aetherway</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 25 Oct 2025 14:02:45 -0300</lastBuildDate><atom:link href="https://millennium-whoop.github.io/aetherway/tags/open/index.xml" rel="self" type="application/rss+xml"/><item><title>#008 - Duke Everton of the Head Dimension</title><link>https://millennium-whoop.github.io/aetherway/abdoopts/008/</link><pubDate>Sat, 25 Oct 2025 14:02:45 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/abdoopts/008/</guid><description>&lt;p&gt;omg omg〜&lt;/p&gt;
-&lt;p&gt;sooo charming n flirty〜&lt;/p&gt;
-&lt;p&gt;well spoken n smart・・・&lt;/p&gt;
-&lt;p&gt;true gentleman energy〜&lt;/p&gt;
-&lt;p&gt;rich too omg kira kira〜&lt;/p&gt;</description></item><item><title>#014 - Cool Burger</title><link>https://millennium-whoop.github.io/aetherway/abdoopts/014/</link><pubDate>Sat, 25 Oct 2025 14:02:45 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/abdoopts/014/</guid><description>&lt;p&gt;omg ne〜&lt;/p&gt;
-&lt;p&gt;Happy Meal box・・・abandoned like 「meh〜」&lt;/p&gt;
-&lt;p&gt;and boom・・・bike gang boss now、yabai ☆&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open on Aetherway</title>
+    <link>http://localhost:1313/aetherway/tags/open/</link>
+    <description>Recent content in Open on Aetherway</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Oct 2025 14:02:45 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/aetherway/tags/open/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>#008 - Duke Everton of the Head Dimension</title>
+      <link>http://localhost:1313/aetherway/abdoopts/008/</link>
+      <pubDate>Sat, 25 Oct 2025 14:02:45 -0300</pubDate>
+      <guid>http://localhost:1313/aetherway/abdoopts/008/</guid>
+      <description>&lt;p&gt;omg omg〜&lt;/p&gt;&#xA;&lt;p&gt;sooo charming n flirty〜&lt;/p&gt;&#xA;&lt;p&gt;well spoken n smart・・・&lt;/p&gt;&#xA;&lt;p&gt;true gentleman energy〜&lt;/p&gt;&#xA;&lt;p&gt;rich too omg kira kira〜&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>#014 - Cool Burger</title>
+      <link>http://localhost:1313/aetherway/abdoopts/014/</link>
+      <pubDate>Sat, 25 Oct 2025 14:02:45 -0300</pubDate>
+      <guid>http://localhost:1313/aetherway/abdoopts/014/</guid>
+      <description>&lt;p&gt;omg ne〜&lt;/p&gt;&#xA;&lt;p&gt;Happy Meal box・・・abandoned like 「meh〜」&lt;/p&gt;&#xA;&lt;p&gt;and boom・・・bike gang boss now、yabai ☆&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

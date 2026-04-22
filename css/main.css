@@ -1013,6 +1013,7 @@ button.sys7:disabled {
     /*     margin-bottom: 1rem !important; */
     /* } */
 
+
     #banners {
         display: none;
     }
@@ -1022,9 +1023,6 @@ button.sys7:disabled {
         display: none;
     }
 
-
-
-
     .epic-date {
         display: none;
     }
@@ -1033,8 +1031,10 @@ button.sys7:disabled {
         display: none;
     }
     
-    .blog-widget-title {
+    .blog-widget-date {
         width: 100%;
+    }
+
 }
 
 
