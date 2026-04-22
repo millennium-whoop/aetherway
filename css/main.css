@@ -637,7 +637,6 @@ pre {
 #spacedvd-widget a{
   text-decoration: none;
   appearance: none;
-  border: 0.125rem solid var(--spacedvd-button);
   background: var(--spacedvd-button);
   padding: 0.5rem 1.125rem; /* = 8px and 18px */
   line-height: 1;
@@ -785,7 +784,7 @@ pre {
 .logov4 {
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .logov4 svg {
@@ -1014,8 +1013,20 @@ button.sys7:disabled {
     /*     margin-bottom: 1rem !important; */
     /* } */
 
+    #banners {
+        display: none;
+    }
+
     .dynamic-banner {
         aspect-ratio: 468/60;
+        display: none;
+    }
+
+
+    .epic-date {
+    }
+
+    .blog-widget-date {
     }
 
 }

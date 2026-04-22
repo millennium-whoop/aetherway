@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>404 — Page Not Found</title>
 <style>
+
+
   html, body {
     margin: 0;
     padding: 0;
@@ -18,7 +20,18 @@
     align-items: center;
     text-align: center;
     font-family: system-ui, sans-serif;
-    background: #fafafa;
+
+    background: url("buttons/88x31_01.gif");
+    color: black;
+    text-shadow:
+    2px 2px 0 white,
+    -2px 2px 0 white,
+    2px -2px 0 white,
+    -2px -2px 0 white,
+    0 2px 0 white,
+    2px 0 0 white,
+    0 -2px 0 white,
+    -2px 0 0 white;
   }
 
   .container {
@@ -27,13 +40,60 @@
     line-height: 1.5;
     font-size: 1.1rem;
   }
+
+
+
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  /* transform: translateZ(0); */
+  /* will-change: transform; */
+
+  background:
+    /* Vignette */
+    radial-gradient(
+      70% 85% at 50% 50%,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.05) 100%
+    ),
+
+    /* Scanlines */
+    linear-gradient(
+      rgba(18,16,16,0) 50%,
+      rgba(0,0,0,0.25) 50%
+    ),
+
+    /* RGB phosphor stripes */
+    linear-gradient(
+      90deg,
+      rgba(255,0,0,0.06),
+      rgba(0,255,0,0.02),
+      rgba(0,0,255,0.06)
+    );
+
+  background-size:
+    100% 100%,
+    100% 2px,
+    3px 100%;
+
+  box-shadow:
+    inset 0 0 1vw rgba(0,0,0,0.5),
+    inset 0 0 6vw rgba(0,0,0,0.4),
+    inset 0 0 15vh rgba(0,0,0,0.2);
+}
+
 </style>
+
 </head>
 <body>
   <div class="container">
     <h2>404</h2>
-    Huh？ 404 showed up ne？！ 「Page not found」・・・ maybe it drifted somewhere else〜 or maybe it was only an illusion from start〜<br><br>
-    Shall we <a href="/">return home</a> ne〜 sweetie〜？
+    <p>eeeh〜？ 404〜？！ 「page not found」・・・ omg where it go〜？ maybe illusion from start、fufufu〜</p>
+    <p>shall we <a href="https://millennium-whoop.github.io/aetherway/">return home</a> ne〜 sweetie〜？</p>
   </div>
 </body>
 </html>
