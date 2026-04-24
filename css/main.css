@@ -342,8 +342,7 @@ pre {
     width: 100%;
     border: 1px solid black;
     
-    /* Prevents a tile from splitting across two columns */
-    break-inside: avoid; 
+    break-inside: avoid; /* Prevents a tile from splitting across two columns */
     font-size: .8rem;
     padding: .5rem;
     margin-bottom: .5rem !important;
@@ -351,7 +350,7 @@ pre {
 }
 
 .home-widgets:last-child {
-    margin-bottom: 0 !important;
+    /* margin-bottom: 0 !important; */
 }
 
 .home-widgets h2,
@@ -744,11 +743,12 @@ pre {
     width: 100%;
 }
 
-.pin-wiget {
+.pin-widget {
+padding:0;
 }
 
 .pin-widget:hover {
-    border: 1px solid var(--spacedvd-button);
+    border: 1px solid var(--spacedvd-button) !important;
     animation: spacedvd-button .1s linear infinite;
 }
 
@@ -766,7 +766,24 @@ pre {
   vertical-align: bottom; /* or top */
 }
 
-#guestbook-widget {
+#sale-widget {
+  background: var(--spacedvd-button);
+  color: var(--bw-text);
+
+  animation: bw-text 9s linear infinite,
+             spacedvd-button 9s linear infinite;
+}
+
+#sale-widget a{
+  color: inherit;
+}
+
+#sale-widget a:hover{
+}
+
+#sale-widget:hover {
+    background: white;
+    color: black;
 }
 
 #home2 {
@@ -859,6 +876,35 @@ pre {
     -2px 0 0 white;
 }
 
+
+.countdown-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.countdown-time {
+  text-align: center;
+}
+
+.countdown-time span {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.countdown-time span.countdown-flip {
+  transform: translateY(-10px);
+  opacity: 0.5;
+}
+
+.countdown-time small {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
 @keyframes banner-scroll {
   0% { transform: translateY(0); }
   20% { transform: translateY(0); }
@@ -886,8 +932,6 @@ pre {
   87.5% { --spacedvd-button: hsl(315, 100%, 50%); }
   100%  { --spacedvd-button: hsl(360, 100%, 50%); }
 }
-
-
 
 /* System 7 button */
 :root {
@@ -1245,6 +1289,19 @@ button.sys7:disabled {
 :root {
     --main-color: hsl(180, 100%, 50%);
     animation: pastelwindows 20s linear infinite;
+}
+
+
+@keyframes bw-text {
+  0%    { --bw-text: white; }   /* red */
+  12.5% { --bw-text: black; }   /* yellow-orange */
+  25%   { --bw-text: black; }   /* yellow-green */
+  37.5% { --bw-text: black; }   /* green */
+  50%   { --bw-text: black; }   /* cyan */
+  62.5% { --bw-text: white; }   /* blue */
+  75%   { --bw-text: white; }   /* purple */
+  87.5% { --bw-text: white; }   /* magenta */
+  100%  { --bw-text: white; }   /* red again */
 }
 
 @keyframes pastelwindows {
