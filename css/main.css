@@ -926,7 +926,6 @@ padding:0;
 }
 
 #counters {
-  background: pink;
   display: grid;
   grid-template-columns: repeat(auto-fit, 90px);
   gap: 0.5rem;
