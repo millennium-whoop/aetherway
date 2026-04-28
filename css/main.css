@@ -926,9 +926,9 @@ padding:0;
 }
 
 #counters {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 90px);
-  gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 }
