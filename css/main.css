@@ -925,6 +925,15 @@ padding:0;
   opacity: 0.7;
 }
 
+#counters {
+  background: pink;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 90px);
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes banner-scroll {
   0% { transform: translateY(0); }
   20% { transform: translateY(0); }
