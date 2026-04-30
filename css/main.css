@@ -935,7 +935,7 @@ padding:0;
 
 #webrings {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 180px);
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   gap: 1rem;
   justify-content: start;
 }
@@ -948,8 +948,22 @@ padding:0;
   align-items: center;
   border: 1px solid black;
   animation: pastelwindows 20s linear infinite;
-  width: 180px;
 }
+
+.custom-webring {
+    width: fit-content;
+}
+
+.custom-webring a {
+  display: inline-block !important;
+}
+
+.custom-webring h3 {
+    margin: 0;
+    text-align: center;
+}
+
+
 
 @keyframes banner-scroll {
   0% { transform: translateY(0); }
@@ -1136,6 +1150,10 @@ button.sys7:disabled {
         margin-bottom: 1rem !important;
     }
 
+
+    #webrings {
+      grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  }
 
 }
 
