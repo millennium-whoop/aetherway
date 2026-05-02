@@ -1017,8 +1017,13 @@ input:focus, select:focus {
   outline: none;
 }
 
-input:focus,
-select:focus {
+input:valid,
+textarea:valid {
+  background-color: transparent;
+}
+
+input:invalid,
+textarea:invalid {
 }
 
 
