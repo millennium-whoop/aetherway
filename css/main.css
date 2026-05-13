@@ -948,6 +948,8 @@ padding:0;
   align-items: center;
   border: 1px solid black;
   animation: pastelwindows 20s linear infinite;
+
+  overflow: hidden;
 }
 
 .custom-webring {
