@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cards on Aetherway</title><link>https://millennium-whoop.github.io/aetherway/cards/</link><description>Recent content in Cards on Aetherway</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 20 Mar 2026 11:06:37 -0300</lastBuildDate><atom:link href="https://millennium-whoop.github.io/aetherway/cards/index.xml" rel="self" type="application/rss+xml"/><item><title>004</title><link>https://millennium-whoop.github.io/aetherway/cards/004/</link><pubDate>Fri, 20 Mar 2026 11:06:37 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/cards/004/</guid><description>&lt;p&gt;holla mi nombre es killerson&lt;/p&gt;</description></item><item><title>003</title><link>https://millennium-whoop.github.io/aetherway/cards/003/</link><pubDate>Fri, 20 Mar 2026 11:06:33 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/cards/003/</guid><description>&lt;p&gt;keep glowing ne, hunny&lt;/p&gt;</description></item><item><title>002</title><link>https://millennium-whoop.github.io/aetherway/cards/002/</link><pubDate>Fri, 20 Mar 2026 11:06:28 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/cards/002/</guid><description>&lt;p&gt;blablabla&lt;/p&gt;</description></item><item><title>001</title><link>https://millennium-whoop.github.io/aetherway/cards/001/</link><pubDate>Fri, 20 Mar 2026 11:06:23 -0300</pubDate><guid>https://millennium-whoop.github.io/aetherway/cards/001/</guid><description>&lt;p&gt;Lady Thread weaves invisible connections between all things.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cards on Aetherway</title>
+    <link>http://localhost:1313/aetherway/cards/</link>
+    <description>Recent content in Cards on Aetherway</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Mar 2026 11:06:37 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/aetherway/cards/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>004</title>
+      <link>http://localhost:1313/aetherway/cards/004/</link>
+      <pubDate>Fri, 20 Mar 2026 11:06:37 -0300</pubDate>
+      <guid>http://localhost:1313/aetherway/cards/004/</guid>
+      <description>&lt;p&gt;holla mi nombre es killerson&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>003</title>
+      <link>http://localhost:1313/aetherway/cards/003/</link>
+      <pubDate>Fri, 20 Mar 2026 11:06:33 -0300</pubDate>
+      <guid>http://localhost:1313/aetherway/cards/003/</guid>
+      <description>&lt;p&gt;keep glowing ne, hunny&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>002</title>
+      <link>http://localhost:1313/aetherway/cards/002/</link>
+      <pubDate>Fri, 20 Mar 2026 11:06:28 -0300</pubDate>
+      <guid>http://localhost:1313/aetherway/cards/002/</guid>
+      <description>&lt;p&gt;blablabla&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>001</title>
+      <link>http://localhost:1313/aetherway/cards/001/</link>
+      <pubDate>Fri, 20 Mar 2026 11:06:23 -0300</pubDate>
+      <guid>http://localhost:1313/aetherway/cards/001/</guid>
+      <description>&lt;p&gt;Lady Thread weaves invisible connections between all things.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
