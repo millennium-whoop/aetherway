@@ -1,0 +1,58 @@
+.card-hunt-wrapper {
+    display: flex;
+    background: pink;
+    justify-content: center;
+}
+
+.card-mystery {
+    border: 2px dashed #f1c40f;
+    background: #fef9e7;
+    margin: 1rem;
+    width: fit-content;
+    text-align: center;
+    cursor: pointer;
+    image-rendering: pixelated;
+    transition: transform 0.3s;
+}
+
+
+.card-ui {
+    width: 250px;
+}
+
+.card-ui img { }
+
+.collected-tag { 
+color: #2ecc71; 
+text-transform: uppercase; 
+font-weight: bold;
+}
+
+.card-revealed {
+}
+
+.card-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.2);
+}
+
+
+.locked-view {
+}
+
+.card-link.disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: inherit;
+}
+
