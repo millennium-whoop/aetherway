@@ -182,8 +182,20 @@ code {
     display: block;
 }
 
-pre {
+.my-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin:  1rem;
 }
+
+.my-button {
+    display: inline-flex;
+}
+
+.my-button img {
+    display: block;
+}
+
 
 #button-container {
   display: grid;
@@ -1040,6 +1052,10 @@ p:empty {
     font-size: 1.5rem;
 }
 
+.sale-price-special {
+    animation: blink 2s steps(1) infinite;
+}
+
 .old-price {
     text-decoration:line-through;
 }
@@ -1471,7 +1487,7 @@ a.sys7 {
   font-family: monospace;
   display: block;
   width: fit-content;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 /* Hover */
