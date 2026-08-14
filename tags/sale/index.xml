@@ -1,24 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Sale on Aetherway</title>
-		<link>http://localhost:1313/aetherway/tags/sale/</link>
-		<description>Recent content in Sale on Aetherway</description>
-		<generator>Hugo</generator>
-		<language>en-us</language>
-		
-		
-		
-		
-			<lastBuildDate>Thu, 13 Aug 2026 00:00:00 +0000</lastBuildDate>
-		
-			<atom:link href="http://localhost:1313/aetherway/tags/sale/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>This finds you at the right time</title>
-				<link>http://localhost:1313/aetherway/news/0007/</link>
-				<pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/aetherway/news/0007/</guid>
-				<description>&lt;p&gt;One is holographic.&lt;/p&gt;&#xA;&lt;p&gt;One is secret.&lt;/p&gt;&#xA;&lt;p&gt;Both → $5.55&lt;/p&gt;&#xA;&lt;p&gt;FREE SHIPPING&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve been waiting for a sign&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.etsy.com/listing/4456308446/retro-pixel-art-holographic-sticker&#34;&gt;This is probably it.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;The anomaly closes 08.16.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;come on baby〜 let’s dance in the gaps of reality〜☆&lt;/em&gt;&lt;/p&gt;</description>
-			</item>
-	</channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sale on Aetherway</title><link>https://millennium-whoop.github.io/aetherway/tags/sale/</link><description>Recent content in Sale on Aetherway</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 13 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://millennium-whoop.github.io/aetherway/tags/sale/index.xml" rel="self" type="application/rss+xml"/><item><title>This finds you at the right time</title><link>https://millennium-whoop.github.io/aetherway/news/0007/</link><pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate><guid>https://millennium-whoop.github.io/aetherway/news/0007/</guid><description>&lt;p&gt;One is holographic.&lt;/p&gt;
+&lt;p&gt;One is secret.&lt;/p&gt;
+&lt;p&gt;Both → $5.55&lt;/p&gt;
+&lt;p&gt;FREE SHIPPING&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve been waiting for a sign&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.etsy.com/listing/4456308446/retro-pixel-art-holographic-sticker"&gt;This is probably it.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The anomaly closes 08.16.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;come on baby〜 let’s dance in the gaps of reality〜☆&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>
