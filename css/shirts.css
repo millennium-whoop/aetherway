@@ -1,0 +1,104 @@
+body {
+  background: url("../shirts/color_bars_with_snow.gif")center / cover no-repeat fixed;
+  background: url("../shirts/black_screen_snow.gif");
+  background: url("../shirts/blue_noise.gif");
+  background: url("../shirts/test_noise.gif")center / cover no-repeat fixed;
+  color: black;
+
+  text-shadow:
+    1px 1px 0 white,
+    -1px 1px 0 white,
+    1px -1px 0 white,
+    -1px -1px 0 white,
+    0 1px 0 white,
+    1px 0 0 white,
+    0 -1px 0 white,
+    -1px 0 0 white;
+}
+
+body a {
+}
+
+.footer-logo img {
+    background: white;
+}
+
+.shirts-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.shirts-item {
+    position: relative;
+    width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shirts-mockup {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.shirts-design {
+    position: absolute;
+    z-index: 3;
+
+    width: auto;
+
+    left: 50%;
+    top: 55%;
+
+    transform:
+        translate(
+            calc(-50% + 0px),
+            calc(-50% - 20px)
+        );
+
+    cursor: crosshair;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.shirts-zoom {
+    position: absolute;
+    z-index: 10;
+
+    left: 10px;
+    top: 10px;
+
+    width: 40%;
+    height: 50%;
+
+    background-color: rgba(255, 255, 255, 0.65);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.15s ease;
+}
+
+.shirts-zoom.visible {
+    opacity: 1;
+}
+
+#shirt-001 .shirts-design {
+}
