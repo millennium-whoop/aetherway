@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <!-- Background / Outer Border -->
+  <rect width="1280" height="720" fill="#121212"/>
+
+  <!-- Main Grid Container -->
+  <g id="color-bars">
+    <!-- Top Bar: 75% Color Bars -->
+    <!-- Gray -->
+    <rect x="140" y="80" width="142.8" height="320" fill="#bfbfbf"/>
+    <!-- Yellow -->
+    <rect x="282.8" y="80" width="142.8" height="320" fill="#bfbf00"/>
+    <!-- Cyan -->
+    <rect x="425.6" y="80" width="142.8" height="320" fill="#00bfbf"/>
+    <!-- Green -->
+    <rect x="568.4" y="80" width="142.8" height="320" fill="#00bf00"/>
+    <!-- Magenta -->
+    <rect x="711.2" y="80" width="142.8" height="320" fill="#bf00bf"/>
+    <!-- Red -->
+    <rect x="854" y="80" width="142.8" height="320" fill="#bf0000"/>
+    <!-- Blue -->
+    <rect x="996.8" y="80" width="143.2" height="320" fill="#0000bf"/>
+
+    <!-- Middle Bar: Split Colors & Casts -->
+    <rect x="140" y="400" width="142.8" height="60" fill="#0000bf"/>
+    <rect x="282.8" y="400" width="142.8" height="60" fill="#131313"/>
+    <rect x="425.6" y="400" width="142.8" height="60" fill="#bf00bf"/>
+    <rect x="568.4" y="400" width="142.8" height="60" fill="#131313"/>
+    <rect x="711.2" y="400" width="142.8" height="60" fill="#00bfbf"/>
+    <rect x="854" y="400" width="142.8" height="60" fill="#131313"/>
+    <rect x="996.8" y="400" width="143.2" height="60" fill="#bfbfbf"/>
+
+    <!-- Lower Step Ramp (10-Step Grayscale) -->
+    <rect x="140" y="460" width="100" height="100" fill="#000000"/>
+    <rect x="240" y="460" width="100" height="100" fill="#1c1c1c"/>
+    <rect x="340" y="460" width="100" height="100" fill="#383838"/>
+    <rect x="440" y="460" width="100" height="100" fill="#555555"/>
+    <rect x="540" y="460" width="100" height="100" fill="#717171"/>
+    <rect x="640" y="460" width="100" height="100" fill="#8d8d8d"/>
+    <rect x="740" y="460" width="100" height="100" fill="#aaaaaa"/>
+    <rect x="840" y="460" width="100" height="100" fill="#c6c6c6"/>
+    <rect x="940" y="460" width="100" height="100" fill="#e2e2e2"/>
+    <rect x="1040" y="460" width="100" height="100" fill="#ffffff"/>
+
+    <!-- Bottom PLUGE / Black Level Calibration -->
+    <rect x="140" y="560" width="250" height="80" fill="#000000"/>
+    <rect x="390" y="560" width="70" height="80" fill="#050505"/> <!-- Superblack (-4%) -->
+    <rect x="460" y="560" width="70" height="80" fill="#131313"/> <!-- Black (0%) -->
+    <rect x="530" y="560" width="70" height="80" fill="#212121"/> <!-- Above Black (+4%) -->
+    <rect x="600" y="560" width="540" height="80" fill="#131313"/>
+  </g>
+
+  <!-- Alignment Crosshairs -->
+  <g stroke="#ffffff" stroke-width="2" opacity="0.6">
+    <!-- Center Reticle -->
+    <circle cx="640" cy="360" r="180" fill="none"/>
+    <circle cx="640" cy="360" r="8" fill="#ffffff"/>
+    <line x1="640" y1="40" x2="640" y2="680"/>
+    <line x1="40" y1="360" x2="1240" y2="360"/>
+  </g>
+</svg>
