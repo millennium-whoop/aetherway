@@ -1314,6 +1314,7 @@ p:empty {
   grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   gap: 1rem;
   justify-content: start;
+  margin-top: 1rem;
 }
 
 .webring {
@@ -1334,12 +1335,15 @@ p:empty {
 
 .custom-webring img {
     display: block;
-    width: auto;
-    max-width: 100%;
+    max-width: 80%;
+    height: 70px;
     max-height: 80px;
-    height: auto;
     object-fit: contain;
     margin: 0 auto 0.5rem;
+    object-fit: contain;
+}
+
+.custom-webring .sys7 {
 }
 
 .custom-webring a {
