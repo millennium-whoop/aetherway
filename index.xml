@@ -1123,8 +1123,12 @@ Grab urs〜☆
 &lt;div class="my-button-wrapper"&gt;
 &lt;a href="https://millennium-whoop.github.io/aetherway/" target="_blank" rel="noopener"&gt;&lt;img src="https://millennium-whoop.github.io/aetherway/buttons/88x31_01.gif" alt="Aetherway" width="88" height="31" style="image-rendering: pixelated;"&gt;&lt;/a&gt;
 &lt;/div&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;lt;a href=&amp;#34;https://millennium-whoop.github.io/aetherway/&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34;https://millennium-whoop.github.io/aetherway/buttons/88x31_01.gif&amp;#34; alt=&amp;#34;Aetherway&amp;#34; width=&amp;#34;88&amp;#34; height=&amp;#34;31&amp;#34; style=&amp;#34;image-rendering: pixelated;&amp;#34;&amp;gt;&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;script&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href="https://millennium-whoop.github.io/aetherway/" target="_blank"&amp;gt;
+ &amp;lt;img src="https://millennium-whoop.github.io/aetherway/buttons/88x31_01.gif" alt="Aetherway" width="88" height="31" style="image-rendering: pixelated;"&amp;gt;
+&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script&gt;
 document.addEventListener("DOMContentLoaded", () =&gt; {
  document.querySelectorAll("pre").forEach((pre) =&gt; {
  const wrapper = document.createElement("div");
@@ -1142,15 +1146,16 @@ document.addEventListener("DOMContentLoaded", () =&gt; {
  setTimeout(() =&gt; (button.innerText = "Copy"), 2000);
  });
 
- // Insert wrapper before pre
+ 
  pre.parentNode.insertBefore(wrapper, pre);
 
- // Move pre inside wrapper
+ 
  wrapper.appendChild(pre);
 
- // Add button BELOW
+ 
  wrapper.appendChild(button);
  });
 });
 &lt;/script&gt;
+
 &lt;p&gt;hotlinking is ｏｋ〜&lt;/p&gt;</description></item></channel></rss>
