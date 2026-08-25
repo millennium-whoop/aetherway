@@ -1099,7 +1099,7 @@ p:empty {
 
 .mini-logo {
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 
@@ -1336,7 +1336,6 @@ p:empty {
 .custom-webring img {
     display: block;
     max-width: 80%;
-    height: 70px;
     max-height: 80px;
     object-fit: contain;
     margin: 0 auto 0.5rem;
@@ -1344,6 +1343,7 @@ p:empty {
 }
 
 .custom-webring .sys7 {
+    margin-bottom: 0 !important;
 }
 
 .custom-webring a {
