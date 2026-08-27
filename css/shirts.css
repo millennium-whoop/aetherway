@@ -16,20 +16,14 @@ body a {
 
 .shirts-item {
     position: relative;
-
     width: 100%;
     height: 100dvh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
-
     background: rgba(0, 0, 0, .5);
-
     border: 1px solid black;
-
     background: url("../shirts/color_bars_with_snow.gif")
         center / cover no-repeat fixed;
 }
@@ -44,28 +38,20 @@ body a {
 
 .shirts-mockup {
     position: absolute;
-
     z-index: 1;
-
     width: 100%;
     height: 100%;
-
     object-fit: contain;
     object-position: center;
-
     display: block;
 }
 
 .shirts-design {
     position: absolute;
-
     z-index: 3;
-
     width: auto;
-
     left: 50%;
     top: 55%;
-
     transform:
         translate(
             calc(-50% + 0px),
@@ -73,7 +59,6 @@ body a {
         );
 
     cursor: crosshair;
-
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
@@ -81,27 +66,18 @@ body a {
 
 .shirts-zoom {
     position: absolute;
-
     z-index: 100;
-
     left: 10px;
     top: 10px;
-
     width: 40%;
     height: 50%;
-
     background-color: rgba(255, 255, 255, 0.65);
-
     background-repeat: no-repeat;
     background-position: center;
-
     border: 1px solid black;
-
     box-sizing: border-box;
-
     opacity: 0;
     pointer-events: none;
-
     transition: opacity 0.15s ease;
 }
 
@@ -112,24 +88,18 @@ body a {
 
 .shirts-price {
     position: absolute;
-
     z-index: 100;
-
     right: 10px;
     bottom: 10px;
-
     width: fit-content;
-
     padding: .5rem;
-
     background: rgba(255, 255, 255, 0.65);
-
     border: 1px solid black;
-
     font-size: 2rem;
-
     color: black;
 }
+
+
 
 .shirts-price a {
     color: black;
@@ -137,27 +107,28 @@ body a {
 
 .shirts-price:hover {
     background: var(--spacedvd-button);
-
     color: var(--bw-text);
-
     animation:
         bw-text 9s linear infinite,
         spacedvd-button 9s linear infinite;
 }
 
+/* .shirts-item:hover .shirts-price { */
+/*     background: var(--spacedvd-button); */
+/*     color: var(--bw-text); */
+/*     animation: */
+/*         bw-text 9s linear infinite, */
+/*         spacedvd-button 9s linear infinite; */
+/* } */
+
 
 .shirts-new-badge {
     position: absolute;
-
     z-index: 100;
-
     top: 10px;
     right: 10px;
-
     width: fit-content;
-
     font-size: 3rem;
-
     text-shadow:
         1px 1px 0 white,
         -1px 1px 0 white,
@@ -172,24 +143,17 @@ body a {
 
 .shirt-buy {
     position: absolute;
-
     z-index: 100;
-
     bottom: 0;
 }
 
 .shirts-nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 10px;
-
     width: 100%;
-
     margin-top: 2rem;
     margin-bottom: 2rem;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
 }
 
 .shirts-nav::-webkit-scrollbar {
@@ -199,65 +163,75 @@ body a {
 
 .shirts-nav-item {
     position: relative;
-
     flex: 0 0 100px;
-
-    width: 100px;
-    height: 100px;
-
+    aspect-ratio: 1/1;
     display: block;
-
     overflow: hidden;
-
     border: 1px solid black;
-
     box-sizing: border-box;
-
     image-rendering: pixelated;
+    background: white;
 }
 
 
 .shirts-nav-item img {
     position: absolute;
-
     width: auto;
     height: auto;
-
     max-width: none;
     max-height: none;
-
     display: block;
-
     image-rendering: pixelated;
     image-rendering: crisp-edges;
-
     left: 50%;
     top: 50%;
-
     transform: translate(-50%, -50%);
 }
 
 
 .shirts-nav-item:hover {
-    transform: scale(1.05);
+    border: 1px solid white;
+    filter: invert(5);
 }
 
+
 #nav-001 img {
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -50%);
 }
 
 #nav-002 img {
-    transform: translate(-60px, -40px);
+    transform: translate(-110px, -120px);
 }
 
 #nav-003 img {
     transform: translate(-20px, -80px);
 }
 
+#nav-004 img {
+    transform: translate(-120px, -180px);
+}
+
+#nav-005 img {
+    transform: translate(-200px, -200px);
+}
+
+#nav-006 img {
+    transform: translate(-70px, -100px);
+}
+
 
 /* =========================
    INDIVIDUAL SHIRTS
    ========================= */
+
+#shirt-001 .shirts-mockup {
+    transform: scale(1.2);
+}
+
+#shirt-001 .shirts-design {
+    position: absolute;
+    top: 50%;
+}
 
 #shirt-002 .shirts-mockup {
     transform: scale(1.2);
@@ -266,3 +240,21 @@ body a {
 #shirt-002 .shirts-design {
 }
 
+
+#shirt-004 .shirts-mockup {
+    transform: scale(1.2);
+}
+
+
+#shirt-005 .shirts-design {
+    position: absolute;
+    top: 50%;
+}
+
+#shirt-005 .shirts-mockup {
+    transform: scale(1.5);
+}
+
+#shirt-006 .shirts-mockup {
+    transform: scale(1.2);
+}
