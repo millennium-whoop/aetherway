@@ -1355,6 +1355,12 @@ p:empty {
     text-align: center;
 }
 
+.no-button {
+    height: 31px;
+    width: 88px;
+    border: 1px solid black;
+}
+
 .form-row {
   display: flex;
   flex-wrap: wrap;
