@@ -1,8 +1,3 @@
-body {
-    background: url("../shirts/color-test.svg") center / cover no-repeat fixed;
-    background: pink;
-    color: black;
-}
 
 body a {
 }
@@ -24,16 +19,21 @@ body a {
     overflow: hidden;
     background: rgba(0, 0, 0, .5);
     border: 1px solid black;
-    background: url("../shirts/color_bars_with_snow.gif")
+    /* font-family: JetBrains Mono, monospace; */
+
+}
+
+.shirts-item:nth-child(3n+1) {
+    background: url("../shirts/color_bars.gif")
         center / cover no-repeat fixed;
 }
 
-.shirts-item:nth-child(2) {
-    background: url("../shirts/blue_noise.gif");
+.shirts-item:nth-child(3n + 2) {
+    background: url("../shirts/black_snow.gif") fixed;
 }
 
-.shirts-item:nth-child(3) {
-    background-image: url("../shirts/third_design.png");
+.shirts-item:nth-child(3n+3) {
+    background: url("../shirts/blue_noise.gif") fixed;
 }
 
 .shirts-mockup {
@@ -44,6 +44,7 @@ body a {
     object-fit: contain;
     object-position: center;
     display: block;
+    transform: scale(1.2);
 }
 
 .shirts-design {
@@ -97,6 +98,7 @@ body a {
     border: 1px solid black;
     font-size: 2rem;
     color: black;
+    line-height: 1;
 }
 
 
@@ -138,6 +140,7 @@ body a {
         1px 0 0 white,
         0 -1px 0 white,
         -1px 0 0 white;
+    line-height: 1;
 }
 
 
@@ -149,7 +152,7 @@ body a {
 
 .shirts-nav {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fit, 80px);;
     gap: 10px;
     width: 100%;
     margin-top: 2rem;
@@ -225,7 +228,6 @@ body a {
    ========================= */
 
 #shirt-001 .shirts-mockup {
-    transform: scale(1.2);
 }
 
 #shirt-001 .shirts-design {
@@ -234,7 +236,6 @@ body a {
 }
 
 #shirt-002 .shirts-mockup {
-    transform: scale(1.2);
 }
 
 #shirt-002 .shirts-design {
@@ -242,7 +243,6 @@ body a {
 
 
 #shirt-004 .shirts-mockup {
-    transform: scale(1.2);
 }
 
 
@@ -256,5 +256,76 @@ body a {
 }
 
 #shirt-006 .shirts-mockup {
-    transform: scale(1.2);
 }
+
+
+@media (orientation: portrait) and (max-width: 600px) {
+    .shirts-item {
+        height: 60dvh;
+    }
+    .shirts-mockup {
+        transform: scale(1.6);
+    }
+    .shirts-design {
+        position: absolute;
+        top: 60%;
+    }
+    #shirt-005 .shirts-mockup {
+        transform: scale(1.8);
+    }
+}
+
+
+
+
+
+/* Effects */
+
+.signal-noise {
+    animation: signal-noise 10s steps(1) infinite;
+}
+
+@keyframes signal-noise {
+    0%, 92% {
+        opacity: 1;
+    }
+
+    /* noise begins */
+    93% {
+        opacity: 0.55;
+    }
+
+    93.5% {
+        opacity: 0.8;
+    }
+
+    94% {
+        opacity: 0.4;
+    }
+
+    94.5% {
+        opacity: 0.7;
+    }
+
+    95% {
+        opacity: 0.3;
+    }
+
+    95.5% {
+        opacity: 0.65;
+    }
+
+    96% {
+        opacity: 0.45;
+    }
+
+    97% {
+        opacity: 0.75;
+    }
+
+    /* signal restored */
+    98%, 100% {
+        opacity: 1;
+    }
+}
+

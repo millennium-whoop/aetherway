@@ -79,4 +79,6 @@ body.no-scroll {
     color: inherit;
 }
 
-
+#codex-grid {
+    margin-bottom: 2rem !important;
+}

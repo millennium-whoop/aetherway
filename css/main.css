@@ -48,6 +48,11 @@ footer {
   display: block;
 }
 
+.footer-logo a img:hover {
+    background: var(--spacedvd-button);
+    animation: spacedvd-button .1s linear infinite;
+}
+
 .parent-header {
     margin-bottom: 1rem;
 }
@@ -231,7 +236,7 @@ code {
 }
 
 .pagination {
-  margin-top: 2em;
+  margin-top: 1.5rem;
   text-align: center;
 }
 
@@ -353,6 +358,7 @@ code {
     transition: transform 0.3s;
 }
 
+.no-button:hover,
 .card-mystery:hover,
 .icon-gallery a img:hover,
 #button-container a img:hover {
@@ -397,6 +403,7 @@ p:empty {
 }
 
 .home-widgets {
+    vertical-align: top;
     display: inline-block; /* Required for column-count to work */
     width: 100%;
     border: 1px solid black;
@@ -404,9 +411,12 @@ p:empty {
     break-inside: avoid; /* Prevents a tile from splitting across two columns */
     font-size: .8rem;
     padding: .5rem;
-    margin-bottom: .5rem !important;
     background: white;
     position: relative;
+}
+
+.small-margin-bottom {
+    margin-bottom: .5rem !important;
 }
 
 .home-widgets:last-child {
@@ -486,7 +496,7 @@ p:empty {
   font-weight: 600;
   user-select: none;
   transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
-  font-family: monospace;
+  font-family: JetBrains Mono, monospace;
   display: block;
   width: fit-content;
   margin: 0 auto;
@@ -536,7 +546,6 @@ p:empty {
 }
 
 .generator-wrapper {
-    background:cyan;
 }
 
 .generator-wrapper h2 {
@@ -739,6 +748,7 @@ p:empty {
 
 #spacedvd-widget img{
     border: 1px solid var(--spacedvd-button);
+    margin-top: 1rem;
 }
 
 #spacedvd-widget a{
@@ -765,9 +775,15 @@ p:empty {
 }
 
 #about-widget {
-    background: url("../images/webmaster-kun.gif") repeat;
+    background: url("../images/me.png") repeat;
     animation: diagonal-slide 8s linear infinite;
     aspect-ratio: 1/1;
+
+}
+
+.pixelated {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges; /* fallback for some browsers */
 }
 
 @keyframes diagonal-slide {
@@ -976,7 +992,7 @@ p:empty {
 }
 
 .home-always-never-has-image {
-    background: black;
+    background: white;
 }
 
 .home-always-never-no-image {
@@ -1038,20 +1054,37 @@ p:empty {
 .news-item:nth-child(odd) {
 }
 
-.sale-badge {
+.home-badges {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: 10px;
+    top: 10px;
     margin: 0;
     font-size: 2rem;
     font-weight: bold;
+    line-height: 1;
+    z-index: 50;
+}
+
+
+.sale-badge {
+}
+
+.hot-badge {
+    color: red !important;
+    animation: heat 1.5s ease-in-out infinite;
+}
+
+@keyframes heat {
+    0%, 100% { transform: translateY(0) skewX(0); }
+    50% { transform: translateY(-1px) skewX(-2deg); }
 }
 
 .prices {
     position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+    right: 10px;
+    bottom: 10px;
     font-size: 1.5rem;
+    line-height: 1;
 }
 
 .sale-price-special {
@@ -1079,6 +1112,111 @@ p:empty {
     image-rendering: crisp-edges; /* fallback for some browsers */
 }
 
+
+.shirt-widget-wrapper {
+    position: relative;
+}
+
+.shirt-widget {
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+
+.shirt-widget-image {
+    display: block;
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    animation: shirt-fade 30s infinite;
+}
+
+.shirt-widget-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.link-arrow::after {
+    content: " →";
+    display: inline;
+}
+
+
+
+/* Fade between images */
+
+.shirt-widget-image:nth-child(1) {
+    animation-delay: 0s;
+    transform: scale(4) translate(0%, 0%);
+}
+
+.shirt-widget-image:nth-child(2) {
+    animation-delay: 6s;
+    transform: scale(4) translate(20%, 10%);
+}
+
+.shirt-widget-image:nth-child(3) {
+    animation-delay: 12s;
+    transform: scale(4) translate(0%, 0%);
+}
+
+.shirt-widget-image:nth-child(4) {
+    animation-delay: 18s;
+    transform: scale(6) translate(15%, 10%);
+}
+
+.shirt-widget-image:nth-child(5) {
+    animation-delay: 24s;
+    transform: scale(4) translate(10%, 10%);
+}
+
+
+/* Fade */
+
+@keyframes shirt-fade {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    18% {
+        opacity: 1;
+    }
+
+    23% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Zoom + vertical movement */
+
+
+@keyframes shirt-drift {
+    from {
+        top: -170%;
+    }
+
+    to {
+        top: -130%;
+    }
+}
+
 @keyframes blink {
   50% {
     opacity: 0;
@@ -1095,11 +1233,6 @@ p:empty {
 
 .full-line {
     width: 100%;
-}
-
-.mini-logo {
-    padding: 1rem;
-    margin-top: 1.5rem;
 }
 
 
@@ -1356,9 +1489,32 @@ p:empty {
 }
 
 .no-button {
-    height: 31px;
     width: 88px;
-    border: 1px solid black;
+    height: 31px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3px;
+
+  background: var(--main-color);
+    border: 1px solid rgba(0,0,0,1);
+    box-shadow:
+      -1px -1px 0 0 var(--border-dark) inset,
+      1px 1px 0 0 var(--border-light) inset;
+
+    color: rgba(0,0,0,.5);
+    font-family: Arial, sans-serif;
+    font-size: clamp(6px, 1.8vw, 9px);
+    font-weight: bold;
+    text-decoration: none;
+
+    overflow: hidden;
+    text-align: center;
+    overflow-wrap: anywhere;
+    transition: transform 0.3s;
 }
 
 .form-row {
@@ -1855,8 +2011,6 @@ button.sys7:disabled {
   87.5% { --main-color: hsl(315, 40%, 82%); }
   100%  { --main-color: hsl(360, 45%, 80%); }
 }
-
-
 
 .open-badge2 {
     color: var(--spacedvd-button);
