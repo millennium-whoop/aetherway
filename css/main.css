@@ -1070,8 +1070,18 @@ p:empty {
 }
 
 .hot-badge {
-    color: red !important;
+    color: black !important;
     animation: heat 1.5s ease-in-out infinite;
+
+  text-shadow:
+    2px 2px 0 red,
+    -2px 2px 0 red,
+    2px -2px 0 red,
+    -2px -2px 0 red,
+    0 2px 0 red,
+    2px 0 0 red,
+    0 -2px 0 red,
+    -2px 0 0 red;
 }
 
 @keyframes heat {
