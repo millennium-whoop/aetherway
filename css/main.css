@@ -1458,6 +1458,7 @@ p:empty {
   gap: 1rem;
   justify-content: start;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .webring {
@@ -1791,9 +1792,17 @@ button.sys7:disabled {
 
 
     .home-widgets {
+        /* margin-bottom: 1rem !important; */
+    }
+
+
+    .small-margin-bottom {
         margin-bottom: 1rem !important;
     }
 
+    .pin-title {
+        line-height: 2;
+    }
 
     #webrings {
       grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
