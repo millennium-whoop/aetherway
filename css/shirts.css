@@ -131,15 +131,6 @@ body a {
     right: 10px;
     width: fit-content;
     font-size: 3rem;
-    text-shadow:
-        1px 1px 0 white,
-        -1px 1px 0 white,
-        1px -1px 0 white,
-        -1px -1px 0 white,
-        0 1px 0 white,
-        1px 0 0 white,
-        0 -1px 0 white,
-        -1px 0 0 white;
     line-height: 1;
 }
 

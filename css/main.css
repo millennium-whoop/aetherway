@@ -749,23 +749,15 @@ p:empty {
 #spacedvd-widget img{
     border: 1px solid var(--spacedvd-button);
     margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 #spacedvd-widget a{
-  text-decoration: none;
-  appearance: none;
   background: var(--spacedvd-button);
-  padding: 0.5rem 1.125rem; /* = 8px and 18px */
   line-height: 1;
-  cursor: pointer;
-  border-radius: 0.2rem;
-  font-weight: 600;
-  user-select: none;
   transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
-  font-family: monospace;
-  display: block;
-  width: fit-content;
-  margin: 1rem auto;
+  margin-bottom: .5rem;
 }
 
 #spacedvd-widget a:hover {
@@ -1122,6 +1114,10 @@ p:empty {
     image-rendering: crisp-edges; /* fallback for some browsers */
 }
 
+.link-arrow::after {
+    content: " →";
+    display: inline;
+}
 
 .shirt-widget-wrapper {
     position: relative;
@@ -1141,9 +1137,7 @@ p:empty {
     display: block;
     position: absolute;
     inset: 0;
-
     opacity: 0;
-    animation: shirt-fade 30s infinite;
 }
 
 .shirt-widget-image img {
@@ -1152,6 +1146,215 @@ p:empty {
     height: 100%;
     object-fit: cover;
 
+    background: var(--spacedvd-button);
+    color: var(--bw-text);
+    animation: spacedvd-button 9s linear infinite;
+}
+
+#sale-widget-wrapper a {
+  display: block;
+  color: black; /* Default state */
+  transition: none;
+  animation: bw-fast-snap 9s linear infinite;
+}
+
+#sale-widget-wrapper:hover #sale-widget,
+#sale-widget-wrapper:hover a {
+  animation: none !important;
+  color: black !important;
+}
+
+@keyframes bw-text {
+  /* 0% to 12.4% -> STAY WHITE */
+  0%, 12.4% { color: white; }
+
+  /* 12.5% to 62.4% -> STAY BLACK */
+  12.5%, 62.4% { color: black; }
+
+  /* 62.5% to 100% -> STAY WHITE */
+  62.5%, 100% { color: white; }
+}
+
+#sale-widget a {
+}
+
+#sale-widget:hover {
+    background: white;
+    color: black;
+}
+
+.home-always-never-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+    margin-bottom: .5rem;
+    font-size: .8rem;
+}
+
+.always-never-list-wrapper {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.home-always-never-post {
+    position: relative;
+}
+
+.home-always-never {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1/2;
+
+    border: 1px solid black;
+    margin: 0 !important;
+}
+
+
+.home-always-never img {
+    background: white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+
+}
+
+.home-always-never-has-image {
+    background: white;
+}
+
+.home-always-never-no-image {
+    background: white;
+    display: block;
+    overflow: hidden;
+}
+
+
+.home-always-never-no-image a {
+    color: black;
+}
+
+.home-always-never-summary-fallback {
+    padding: .5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-always-never-title {
+    font-weight: bold;
+    max-width: 70%;
+}
+
+.home-always-never-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-badge, .updated-badge {
+    display: inline-block;
+    animation: blink 2s steps(1) infinite;
+    white-space: nowrap;
+}
+
+#news-widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.news-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.news-item a {
+    flex: 1;
+}
+
+.news-date {
+    white-space: nowrap;
+}
+
+.news-item:nth-child(odd) {
+}
+
+.home-badges {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    z-index: 50;
+}
+
+
+.sale-badge {
+}
+
+.hot-badge {
+    color: black !important;
+    animation: heat 1.5s ease-in-out infinite;
+
+  text-shadow:
+    2px 2px 0 red,
+    -2px 2px 0 red,
+    2px -2px 0 red,
+    -2px -2px 0 red,
+    0 2px 0 red,
+    2px 0 0 red,
+    0 -2px 0 red,
+    -2px 0 0 red;
+}
+
+@keyframes heat {
+    0%, 100% { transform: translateY(0) skewX(0); }
+    50% { transform: translateY(-1px) skewX(-2deg); }
+}
+
+.prices {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.sale-price-special {
+    animation: blink 2s steps(1) infinite;
+}
+
+.old-price {
+    text-decoration:line-through;
+}
+
+.fundraise-widget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  margin-top: 1rem;
+  gap: .5rem;
+}
+
+.fundraise-message {
+}
+
+.webmaster img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges; /* fallback for some browsers */
 }
 
 .link-arrow::after {
@@ -1159,31 +1362,62 @@ p:empty {
     display: inline;
 }
 
-
-
-/* Fade between images */
-
-.shirt-widget-image:nth-child(1) {
-    animation-delay: 0s;
-    transform: scale(4) translate(0%, 0%);
+.shirt-widget-wrapper {
+    position: relative;
 }
 
-.shirt-widget-image:nth-child(2) {
+.shirt-widget {
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+
+.shirt-widget-image {
+    display: block;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+.shirt-widget-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Individual shirts */
+
+#home-shirt-001 {
+    animation: shirt-fade 30s infinite;
+    animation-delay: 0s;
+    transform: scale(3) translate(0%, 0%);
+}
+
+#home-shirt-002 {
+    animation: shirt-fade 30s infinite;
     animation-delay: 6s;
     transform: scale(4) translate(20%, 10%);
 }
 
-.shirt-widget-image:nth-child(3) {
+#home-shirt-004 {
+    animation: shirt-fade 30s infinite;
     animation-delay: 12s;
     transform: scale(4) translate(0%, 0%);
 }
 
-.shirt-widget-image:nth-child(4) {
+#home-shirt-005 {
+    animation: shirt-fade 30s infinite;
     animation-delay: 18s;
-    transform: scale(6) translate(15%, 10%);
+    transform: scale(4) translate(5%, 12%);
 }
 
-.shirt-widget-image:nth-child(5) {
+#home-shirt-006 {
+    animation: shirt-fade 30s infinite;
     animation-delay: 24s;
     transform: scale(4) translate(10%, 10%);
 }
@@ -1192,39 +1426,11 @@ p:empty {
 /* Fade */
 
 @keyframes shirt-fade {
-    0% {
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    18% {
-        opacity: 1;
-    }
-
-    23% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-
-/* Zoom + vertical movement */
-
-
-@keyframes shirt-drift {
-    from {
-        top: -170%;
-    }
-
-    to {
-        top: -130%;
-    }
+    0% { opacity: 0; }
+    5% { opacity: 1; }   /* Fade in quickly over 1.5s */
+    20% { opacity: 1; }  /* Stay fully visible for ~4.5s */
+    25% { opacity: 0; }  /* Fade out over 1.5s */
+    100% { opacity: 0; } /* Remain hidden for the rest of the cycle */
 }
 
 @keyframes blink {
@@ -1234,6 +1440,7 @@ p:empty {
 }
 
 .new-badge {
+    color: white;
 }
 
 .published {
@@ -1409,6 +1616,21 @@ p:empty {
     2px 0 0 white,
     0 -2px 0 white,
     -2px 0 0 white;
+}
+
+
+.rainbow-shadow {
+  text-shadow:
+    2px 2px 0 var(--spacedvd-button),
+    -2px 2px 0 var(--spacedvd-button),
+    2px -2px 0 var(--spacedvd-button),
+    -2px -2px 0 var(--spacedvd-button),
+    0 2px 0 var(--spacedvd-button),
+    2px 0 0 var(--spacedvd-button),
+    0 -2px 0 var(--spacedvd-button),
+    -2px 0 0 var(--spacedvd-button);
+
+    animation: spacedvd-button 9s linear infinite;
 }
 
 .strike {
