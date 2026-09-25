@@ -1102,7 +1102,7 @@ p:empty {
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem !important;
   gap: .5rem;
 }
 
@@ -1444,8 +1444,16 @@ p:empty {
 }
 
 .published {
-    margin-top: auto;
     font-style: italic;
+}
+
+.pre-footer {
+    margin-top: auto;
+}
+
+.form-wrapper {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
 }
 
 .full-line {
@@ -1680,7 +1688,7 @@ p:empty {
   gap: 1rem;
   justify-content: start;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .webring {
