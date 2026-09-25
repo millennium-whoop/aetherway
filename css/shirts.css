@@ -24,8 +24,9 @@ body a {
 }
 
 .shirts-item:nth-child(3n+1) {
-    background: url("../shirts/color_bars.gif")
-        center / cover no-repeat fixed;
+    /* background: url("../shirts/color_bars.gif") */
+    /*     center / cover no-repeat fixed; */
+    background: url("../shirts/blue_noise.gif") fixed;
 }
 
 .shirts-item:nth-child(3n + 2) {
@@ -33,7 +34,7 @@ body a {
 }
 
 .shirts-item:nth-child(3n+3) {
-    background: url("../shirts/blue_noise.gif") fixed;
+    background: url("../shirts/color_bars.gif") fixed;
 }
 
 .shirts-mockup {
@@ -134,6 +135,14 @@ body a {
     line-height: 1;
 }
 
+.free-shipping-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    animation: toggleCase 1.5s ease-in-out infinite;
+    font-family: JetBrains Mono, monospace;
+    z-index: 200;
+}
 
 .shirt-buy {
     position: absolute;

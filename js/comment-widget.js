@@ -36,7 +36,7 @@ const s_dstEnd = ['November', 'Sunday', 1, 2]; // Example shown is the first Sun
 // Misc - Other random settings
 const s_commentsPerPage = 5; // The max amount of comments that can be displayed on one page, any number >= 1 (Replies not counted)
 const s_maxLength = 500; // The max character length of a comment
-const s_maxLengthName = 16; // The max character length of a name
+const s_maxLengthName = 12; // The max character length of a name
 const s_commentsOpen = true; // Change to false if you'd like to close your comment section site-wide (Turn it off on Google Forms too!)
 const s_collapsedReplies = true; // True for collapsed replies with a button, false for replies to display automatically
 const s_longTimestamp = false; // True for a date + time, false for just the date
@@ -47,8 +47,20 @@ const s_fixRarebitIndexPage = false; // If using Rarebit, change to true to make
 const s_wordFilterOn = false; // True for on, false for off
 const s_filterReplacement = '****'; // Change what filtered words are censored with (**** is the default)
 const s_filteredWords = [ // Add words to filter by putting them in quotes and separating with commas (ie. 'heck', 'dang')
-    'heck', 'dang'
+    'heck', 'dang', 'commission', 'beware', 'artistsbeware'
 ]
+
+// URL / Domain Blocklist - Ignore comments if the Website field contains any of these
+const s_blockedWebsites = [
+    'spam-site.com',
+    'scam.org',
+    'scam',
+    'sketchy-domain',
+    'artistsbeware.info',
+    'google.com',
+    'commission',
+    'refund'
+];
 
 // Text - Change what messages/text appear on the form and in the comments section (Mostly self explanatory)
 const s_widgetTitle = 'Leave a comment!';
@@ -203,19 +215,42 @@ function getComments() {
                 if (!json.table.rows[r].c[pageIdx]) {val1 = ''}
                 else {val1 = json.table.rows[r].c[pageIdx].v}
 
+                // Regex pattern matching common URL formats in the text field
+                const urlRegex = /(https?:\/\/|www\.|[a-z0-9-]+\.(com|net|org|io|me|co|info|biz|gov|edu))/i;
+
                 // Check if the page name matches before adding to comment array
                 if (val1 == v_pagePath) { 
-                    let comment = {}
+                    let comment = {};
                     for (c = 0; c < json.table.cols.length; c++) {
-                        // Check for null values
                         let val2;
-                        if (!json.table.rows[r].c[c]) {val2 = ''}
-                        else {val2 = json.table.rows[r].c[c].v}
+                        if (!json.table.rows[r].c[c]) { val2 = ''; }
+                        else { val2 = json.table.rows[r].c[c].v; }
 
-                        // Finally set the value properly
                         comment[json.table.cols[c].label] = val2;
                     }
                     comment.Timestamp2 = json.table.rows[r].c[0].f;
+
+                    // 1. Check if comment body contains links
+                    if (comment.Text && urlRegex.test(comment.Text)) {
+                        continue; // Ignore this comment
+                    }
+
+                    // 2. Check if website field matches blocked list
+                    if (comment.Website || comment.Text) {
+                        const isBlocked = s_blockedWebsites.some(blockedUrl => {
+                            const blocked = blockedUrl.toLowerCase();
+
+                            return (
+                                (comment.Website && comment.Website.toLowerCase().includes(blocked)) ||
+                                (comment.Text && comment.Text.toLowerCase().includes(blocked))
+                            );
+                        });
+
+                        if (isBlocked) {
+                            continue;
+                        }
+                    }
+
                     comments.push(comment);
                 }
             }
