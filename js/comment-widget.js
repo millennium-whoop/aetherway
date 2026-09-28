@@ -57,8 +57,10 @@ const s_blockedWebsites = [
     'scam',
     'sketchy-domain',
     'artistsbeware.info',
+    'beware',
     'google.com',
     'commission',
+    'toyhou.se',
     'refund'
 ];
 
