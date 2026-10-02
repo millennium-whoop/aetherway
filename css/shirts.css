@@ -26,11 +26,11 @@ body a {
 .shirts-item:nth-child(3n+1) {
     /* background: url("../shirts/color_bars.gif") */
     /*     center / cover no-repeat fixed; */
-    background: url("../shirts/blue_noise.gif") fixed;
+    background: url("../shirts/black_snow.gif") fixed;
 }
 
 .shirts-item:nth-child(3n + 2) {
-    background: url("../shirts/black_snow.gif") fixed;
+    background: url("../shirts/blue_noise.gif") fixed;
 }
 
 .shirts-item:nth-child(3n+3) {

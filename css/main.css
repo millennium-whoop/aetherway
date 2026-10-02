@@ -1838,6 +1838,75 @@ textarea:invalid {
   display: block;
 }
 
+.goalbar-wrapper {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.goalbar {
+    width: 100%;
+    height: 20px;
+    border: 1px solid currentColor;
+    box-sizing: border-box;
+}
+
+.goalbar-fill {
+    height: 100%;
+    /* background: currentColor; */
+    transition: width 0.3s ease;
+    background: var(--spacedvd-button);
+    animation: spacedvd-button 9s linear infinite;
+}
+
+.goal-text {
+    /* margin-top: 5px; */
+}
+
+
+
+.refund-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.refund-table th,
+.refund-table td {
+    /* padding: 0.5rem 0.8rem; */
+    text-align: left;
+    /* border-bottom: 1px solid currentColor; */
+}
+
+.refund-table th {
+    font-weight: normal;
+    opacity: 0.6;
+}
+
+.refund-table td:nth-child(2) {
+    white-space: nowrap;
+}
+
+.refund-table tbody tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.refund-table tbody tr:nth-child(even) {
+    background: transparent;
+}
+
+.refund-badge {
+    /* display: inline-block; */
+    /* padding: 0.15rem 0.4rem; */
+    /* border: 1px solid currentColor; */
+    /* font-size: 0.8em; */
+    /* white-space: nowrap; */
+}
+
+.refund-date {
+    opacity: 0.6;
+}
+
 
 
 @keyframes banner-scroll {
