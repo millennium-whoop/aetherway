@@ -1866,6 +1866,8 @@ textarea:invalid {
 
 .refund-table {
     width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -1873,18 +1875,26 @@ textarea:invalid {
 
 .refund-table th,
 .refund-table td {
-    /* padding: 0.5rem 0.8rem; */
     text-align: left;
-    /* border-bottom: 1px solid currentColor; */
-}
-
-.refund-table th {
-    font-weight: normal;
-    opacity: 0.6;
-}
-
-.refund-table td:nth-child(2) {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+/* Column widths */
+.refund-table th:first-child,
+.refund-table td:first-child {
+    width: 60%;
+}
+
+.refund-table th:nth-child(2),
+.refund-table td:nth-child(2), 
+.refund-table th:nth-child(3),
+.refund-table td:nth-child(3),
+.refund-table th:nth-child(4),
+.refund-table td:nth-child(4) {
+    width: 10%;
 }
 
 .refund-table tbody tr:nth-child(odd) {
