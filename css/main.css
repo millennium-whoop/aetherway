@@ -1885,7 +1885,7 @@ textarea:invalid {
 /* Column widths */
 .refund-table th:first-child,
 .refund-table td:first-child {
-    width: 60%;
+    width: 54%;
 }
 
 .refund-table th:nth-child(2),
@@ -1894,7 +1894,7 @@ textarea:invalid {
 .refund-table td:nth-child(3),
 .refund-table th:nth-child(4),
 .refund-table td:nth-child(4) {
-    width: 10%;
+    width: 12%;
 }
 
 .refund-table tbody tr:nth-child(odd) {
