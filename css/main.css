@@ -1703,6 +1703,10 @@ p:empty {
   overflow: hidden;
 }
 
+.webring-widget-wrapper {
+    /* transform: scale(0.8); */
+}
+
 .custom-webring {
     text-align: center;
 }
@@ -1885,7 +1889,7 @@ textarea:invalid {
 /* Column widths */
 .refund-table th:first-child,
 .refund-table td:first-child {
-    width: 54%;
+    width: 48%;
 }
 
 .refund-table th:nth-child(2),
@@ -1894,7 +1898,7 @@ textarea:invalid {
 .refund-table td:nth-child(3),
 .refund-table th:nth-child(4),
 .refund-table td:nth-child(4) {
-    width: 12%;
+    width: 14%;
 }
 
 .refund-table tbody tr:nth-child(odd) {
