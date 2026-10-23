@@ -51,6 +51,7 @@ footer {
 .footer-logo a img:hover {
     background: var(--spacedvd-button);
     animation: spacedvd-button .1s linear infinite;
+
 }
 
 .parent-header {
@@ -1949,6 +1950,18 @@ textarea:invalid {
   75%   { --spacedvd-button: hsl(270, 100%, 50%); }
   87.5% { --spacedvd-button: hsl(315, 100%, 50%); }
   100%  { --spacedvd-button: hsl(360, 100%, 50%); }
+}
+
+@keyframes spacedvd-button2 {
+  0%    { color: hsl(  0, 100%, 50%); }
+  12.5% { color: hsl( 45, 100%, 50%); }
+  25%   { color: hsl( 90, 100%, 50%); }
+  37.5% { color: hsl(135, 100%, 50%); }
+  50%   { color: hsl(180, 100%, 50%); }
+  62.5% { color: hsl(225, 100%, 50%); }
+  75%   { color: hsl(270, 100%, 50%); }
+  87.5% { color: hsl(315, 100%, 50%); }
+  100%  { color: hsl(360, 100%, 50%); }
 }
 
 /* System 7 button */
