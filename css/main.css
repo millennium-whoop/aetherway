@@ -735,6 +735,8 @@ p:empty {
 
 #epic-widget a {
     color: lime;
+    /* color: var(--spacedvd-button); */
+    /* animation: spacedvd-button 9s linear infinite; */
 }
 
 
