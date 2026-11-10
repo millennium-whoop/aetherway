@@ -207,7 +207,8 @@ code {
   display: grid;
   grid-template-columns: repeat(auto-fill, 90px);
   gap: .5rem;
-  justify-content: space-between;
+  justify-content: center;
+  place-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -1731,7 +1732,7 @@ p:empty {
 }
 
 .webring-widget-wrapper {
-    /* transform: scale(0.8); */
+    transform: scale(0.8);
 }
 
 .custom-webring {
