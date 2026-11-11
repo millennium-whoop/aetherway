@@ -648,6 +648,35 @@ p:empty {
     border: 2px solid rgba(0,0,0,.1);
 }
 
+.blog-widget-more {
+  text-decoration: none;
+  appearance: none;
+  border: 0.125rem solid black; /* = 2px */
+  padding: 0.5rem 1.125rem; /* = 8px and 18px */
+  line-height: 1;
+  cursor: pointer;
+  color: black !important;
+  background: var(--face);
+  box-shadow:
+    -3px -3px 0 0 var(--border-dark) inset,
+    3px 3px 0 0 var(--border-light) inset,
+    inset 1px 1px 0 var(--shadow-dark),
+    inset -1px -1px 0 var(--shadow-light);
+  border-radius: 0.2rem;
+  font-weight: 600;
+  user-select: none;
+  transition: transform 60ms linear, box-shadow 60ms linear, background 60ms linear;
+  font-family: monospace;
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+.blog-widget-more:hover {
+    background: transparent !important;
+}
+
+
 
 .heading-blink:hover {
     animation: heading-blink 0.05s steps(1, end) infinite;
@@ -1467,7 +1496,7 @@ p:empty {
   }
 }
 
-.new-badge {
+.new-badge-big {
     color: white;
 }
 
@@ -2034,7 +2063,7 @@ a.sys7 {
 
 /* Hover */
 :root {
-  --glow: 0 0 0 6px var(--focus); /* default glow */
+  --glow: 0 0 0 2px var(--focus); /* default glow */
 }
 
 button.sys7:hover:enabled,
@@ -2066,6 +2095,7 @@ a.sys7:hover,
 
 
 /* Active (pressed) */
+.blog-widget-more:active,
 button.sys7:active:enabled,
 a.sys7:active {
   transform: translateY(1px);
