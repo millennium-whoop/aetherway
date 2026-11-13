@@ -372,6 +372,9 @@ code {
   transition: transform 0.3s;
 }
 
+.codex-progress {
+}
+
 p:empty {
     display: none;
 }
