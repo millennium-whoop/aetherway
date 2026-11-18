@@ -276,7 +276,6 @@ code {
   -webkit-text-stroke: 1px black;
   animation:
     spinGradient 3s linear infinite;
-  text-transform: uppercase;
 }
 
 .bid-here {
@@ -1508,7 +1507,8 @@ p:empty {
 }
 
 .pre-footer {
-    margin-top: auto;
+    /* margin-top: auto; */
+    margin-top: 3rem;
 }
 
 .form-wrapper {
@@ -1660,6 +1660,9 @@ p:empty {
 .logo-always-never rect:nth-child(6n) { animation-delay: 0.45s; }
 .logo-always-never rect:nth-child(9n) { animation-delay: 0.15s; }
 
+.uppercase {
+  text-transform: uppercase;
+}
 
 .text-shadow {
   color: white;
