@@ -149,11 +149,31 @@ img {
 h1 {
     font-family: Noto Serif, Liberation Serif, DejaVu Serif, serif;
     font-size: 5em;
-    animation: toggleCase 1.5s ease-in-out infinite;
+    animation: moving-shadow 3s ease-in-out infinite;
+/* text-shadow: 2px 2px 0 black; */ 
 }
+
 
 main {
   font-family: 'M PLUS 2', sans-serif;
+}
+
+@keyframes moving-shadow {
+  0% {
+    text-shadow: 2px 3px 0 black;
+  }
+  25% {
+    text-shadow: 3px 1px 0 black;
+  }
+  50% {
+    text-shadow: 0px -2px 0 black;
+  }
+  75% {
+    text-shadow: -3px 1px 0 black;
+  }
+  100% {
+    text-shadow: 2px 3px 0 black;
+  }
 }
 
 /* a { */
