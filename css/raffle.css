@@ -1,16 +1,37 @@
-body {
-  /* background: var(--spacedvd-button); */
-  /* color: var(--bw-text); */
 
-  /* animation: bw-text 9s linear infinite, */
-  /*            spacedvd-button 9s linear infinite; */
-
-
-  /* background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, magenta, red); */
-  /* background-size: 200% 100%; */
-  /* animation: */
-  /*   spinGradient 60s linear infinite; */
+hr,
+img {
+  mix-blend-mode: multiply;
 }
+
+h1 {
+    font-family: Noto Serif, Liberation Serif, DejaVu Serif, serif;
+    font-size: 5em;
+    animation: spacedvd-button 9s linear infinite, moving-shadow 9s ease-in-out infinite;
+    text-shadow: 2px 2px 0 var(--spacedvd-button); 
+    text-stroke: 1px black;
+    -webkit-text-stroke: 1px var(--spacedvd-button);
+}
+
+main {
+  font-family: 'M PLUS 2', sans-serif;
+}
+
+a {
+
+    color: black;
+}
+
+main a {
+    background: var(--spacedvd-button);
+    animation: spacedvd-button 9s linear infinite;
+    border-radius: 5px;
+}
+
+.footer-logo a {
+    background: none;
+}
+
 
 body {
   position: relative;
@@ -53,6 +74,69 @@ body::before {
     drift6 25s ease-in-out infinite alternate,
     drift7 21s ease-in-out infinite alternate,
     drift8 27s ease-in-out infinite alternate;
+}
+
+.countdown-container {
+    font-family: Noto Serif, Liberation Serif, DejaVu Serif, serif;
+}
+
+.snowflakes {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  color: white;
+}
+
+.snowflakes span {
+  position: absolute;
+  animation: snow-jump 8s steps(1, end) infinite, spacedvd-button 9s linear infinite;
+}
+
+/* Starting positions */
+
+.snowflakes span:nth-child(1)  { top: 8%;  left: 12%; font-size: 3rem; }
+.snowflakes span:nth-child(2)  { top: 23%; left: 78%; font-size: 4rem; }
+.snowflakes span:nth-child(3)  { top: 42%; left: 35%; font-size: 5rem; }
+.snowflakes span:nth-child(4)  { top: 67%; left: 89%; font-size: 3.5rem; }
+.snowflakes span:nth-child(5)  { top: 85%; left: 22%; font-size: 6rem; }
+.snowflakes span:nth-child(6)  { top: 12%; left: 53%; font-size: 2.5rem; }
+.snowflakes span:nth-child(7)  { top: 55%; left: 8%;  font-size: 4.5rem; }
+.snowflakes span:nth-child(8)  { top: 78%; left: 62%; font-size: 3rem; }
+.snowflakes span:nth-child(9)  { top: 32%; left: 92%; font-size: 5.5rem; }
+.snowflakes span:nth-child(10) { top: 92%; left: 45%; font-size: 4rem; }
+.snowflakes span:nth-child(11) { top: 5%;  left: 85%; font-size: 5rem; }
+.snowflakes span:nth-child(12) { top: 48%; left: 68%; font-size: 3rem; }
+
+@keyframes snow-jump {
+  0%   { translate: 0 0; font-size: 2.5rem; }
+  15%  { translate: 20vw 10vh; font-size: 5rem; }
+  30%  { translate: -10vw 25vh; font-size: 3.5rem; }
+  45%  { translate: 15vw -15vh; font-size: 6rem; }
+  60%  { translate: -20vw 5vh; font-size: 3rem; }
+  75%  { translate: 10vw 20vh; font-size: 5.5rem; }
+  90%  { translate: -5vw -10vh; font-size: 4rem; }
+  100% { translate: 0 0; font-size: 2.5rem; }
+}
+
+.snowflakes span:nth-child(2n) {
+  animation-duration: 11s;
+}
+
+.snowflakes span:nth-child(3n) {
+  animation-duration: 7s;
+  animation-delay: -3s;
+}
+
+.snowflakes span:nth-child(4n) {
+  animation-duration: 13s;
+  animation-delay: -6s;
+}
+
+.snowflakes span:nth-child(5n) {
+  animation-duration: 9s;
+  animation-delay: -5s;
 }
 
 @keyframes drift1 {
@@ -141,38 +225,22 @@ body::before {
 }
 
 
-hr,
-img {
-  mix-blend-mode: multiply;
-}
-
-h1 {
-    font-family: Noto Serif, Liberation Serif, DejaVu Serif, serif;
-    font-size: 5em;
-    animation: moving-shadow 3s ease-in-out infinite;
-/* text-shadow: 2px 2px 0 black; */ 
-}
-
-
-main {
-  font-family: 'M PLUS 2', sans-serif;
-}
 
 @keyframes moving-shadow {
   0% {
-    text-shadow: 2px 3px 0 black;
+    text-shadow: 0.08em 0.12em 0 var(--spacedvd-button);
   }
   25% {
-    text-shadow: 3px 1px 0 black;
+    text-shadow: 0.15em 0.05em 0 var(--spacedvd-button);
   }
   50% {
-    text-shadow: 0px -2px 0 black;
+    text-shadow: 0 -0.12em 0 var(--spacedvd-button);
   }
   75% {
-    text-shadow: -3px 1px 0 black;
+    text-shadow: -0.15em 0.05em 0 var(--spacedvd-button);
   }
   100% {
-    text-shadow: 2px 3px 0 black;
+    text-shadow: 0.08em 0.12em 0 var(--spacedvd-button);
   }
 }
 
