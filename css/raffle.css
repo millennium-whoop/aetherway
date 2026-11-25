@@ -80,6 +80,22 @@ body::before {
     font-family: Noto Serif, Liberation Serif, DejaVu Serif, serif;
 }
 
+
+video {
+    display: inline-block;
+    max-width: 40%;
+    border-radius: 10px;
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 .snowflakes {
   position: fixed;
   inset: 0;
@@ -87,6 +103,7 @@ body::before {
   pointer-events: none;
   z-index: -1;
   color: white;
+  mix-blend-mode: overlay;
 }
 
 .snowflakes span {
